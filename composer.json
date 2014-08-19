@@ -1,0 +1,12 @@
+{
+    "name": "pegasuscommerce/pegasuscommerce",
+    "description": "Pegasus Commerce Core",
+    "minimum-stability": "stable",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Julian Haupt",
+            "email": "jh@spielmeister.com"
+        }
+    ]
+}
