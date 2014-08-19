@@ -1,31 +1,18 @@
 {
     "name": "pegasuscommerce/pegasuscommerce",
+    "autoload": {
+        "psr-0" : {
+            "PegasusCommerce" : "src/main/php"
+        }
+    },
+    "version": "dev-master",
     "description": "Pegasus Commerce Core",
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "license": "proprietary",
     "authors": [
         {
             "name": "Julian Haupt",
             "email": "jh@spielmeister.com"
-        }
-    ],
-    "repositories": [
-        {
-            "type": "package",
-            "package": {
-                "name": "pegasuscommerce/pegasuscommerce",
-                "version": "dev-master",
-                "source": {
-                    "url": "ssh://git@stash.abfallscout.de:7999/as/abfallscout.git",
-                    "type": "git",
-                    "reference": "master"
-                },
-                "autoload": {
-                    "psr-0" : {
-                        "PegasusCommerce" : "src/main/php"
-                    }
-                }
-            }
         }
     ],
     "require": {
