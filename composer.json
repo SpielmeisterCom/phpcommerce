@@ -11,6 +11,9 @@
     ],
     "require": {
         "psr/log": "1.0.0",
-        "phpunit/phpunit": "4.2.2"
+        "phpunit/phpunit": "4.2.2",
+        "symfony/config": "v2.5.3",
+        "symfony/dependency-injection": "v2.5.3",
+        "symfony/class-loader": "v2.5.3"
     }
 }
