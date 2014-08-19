@@ -4,7 +4,7 @@
          xsi:noNamespaceSchemaLocation="http://schema.phpunit.de/4.1/phpunit.xsd"
          backupGlobals="false"
          colors="true"
-         bootstrap="includes/init.inc.php"
+         bootstrap="autoload.php.dist.php"
         >
     <php>
         <ini name="intl.default_locale" value="en"/>
@@ -13,8 +13,8 @@
     </php>
 
     <testsuites>
-        <testsuite name="ECommerce Test Suite">
-            <directory>./packages/ECommerce/Test/</directory>
+        <testsuite name="PegasusCommerce_Full">
+            <directory>./src/test/php/</directory>
         </testsuite>
     </testsuites>
     <php>
