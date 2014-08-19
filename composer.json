@@ -8,5 +8,9 @@
             "name": "Julian Haupt",
             "email": "jh@spielmeister.com"
         }
-    ]
+    ],
+    "require": {
+        "psr/log": "1.0.0",
+        "phpunit/phpunit": "4.2.2"
+    }
 }
