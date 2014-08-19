@@ -9,6 +9,25 @@
             "email": "jh@spielmeister.com"
         }
     ],
+    "repositories": [
+        {
+            "type": "package",
+            "package": {
+                "name": "pegasuscommerce/pegasuscommerce",
+                "version": "dev-master",
+                "source": {
+                    "url": "ssh://git@stash.abfallscout.de:7999/as/abfallscout.git",
+                    "type": "git",
+                    "reference": "master"
+                },
+                "autoload": {
+                    "psr-0" : {
+                        "PegasusCommerce" : "src/main/php"
+                    }
+                }
+            }
+        }
+    ],
     "require": {
         "psr/log": "1.0.0",
         "phpunit/phpunit": "4.2.2",
