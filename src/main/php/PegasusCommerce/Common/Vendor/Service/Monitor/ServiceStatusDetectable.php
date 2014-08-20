@@ -1,5 +1,5 @@
 <?php
-namespace PegasusCommerce\Common\Vencor\Service\Monitor;
+namespace PegasusCommerce\Common\Vendor\Service\Monitor;
 
 use PegasusCommerce\Common\Vencor\Service\Type\ServiceStatusType;
 
