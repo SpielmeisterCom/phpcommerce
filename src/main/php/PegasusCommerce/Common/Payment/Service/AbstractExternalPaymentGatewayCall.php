@@ -2,6 +2,7 @@
 namespace PegasusCommerce\Common\Payment\Service;
 use Exception;
 use PegasusCommerce\Common\Vencor\Service\Type\ServiceStatusType;
+use PegasusCommerce\Common\Vendor\Service\Monitor\ServiceStatusDetectable;
 use PegasusCommerce\Core\Payment\Service\Exception\PaymentException;
 
 /**
