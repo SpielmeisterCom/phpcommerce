@@ -16,43 +16,43 @@ namespace PegasusCommerce\Common\Payment\Dto;
   *
   * <pre><code>
   *      PaymentRequestDTO requestDTO = new PaymentRequestDTO()
-  *          .orderId(referenceNumber)
-  *          .customer()
-  *              .customerId("1")
-  *              .done()
-  *          .shipTo()
-  *              .addressFirstName("Bill")
-  *              .addressLastName("Broadleaf")
-  *              .addressLine1("123 Test Dr.")
-  *              .addressCityLocality("Austin")
-  *              .addressStateRegion("TX")
-  *              .addressPostalCode("78759")
-  *              .done()
-  *          .billTo()
-  *              .addressFirstName("Bill")
-  *              .addressLastName("Broadleaf")
-  *              .addressLine1("123 Test Dr.")
-  *              .addressCityLocality("Austin")
-  *              .addressStateRegion("TX")
-  *              .addressPostalCode("78759")
-  *              .done()
-  *          .shippingTotal("0")
-  *          .taxTotal("0")
-  *          .orderCurrencyCode("USD")
-  *          .orderDescription("My Order Description")
-  *          .orderSubtotal("10.00")
-  *          .transactionTotal("10.00")
-  *          .lineItem()
-  *              .name("My Product")
-  *              .description("My Product Description")
-  *              .shortDescription("My Product Short Description")
-  *              .systemId("1")
-  *              .amount("10.00")
-  *              .quantity("1")
-  *              .itemTotal("10.00")
-  *              .tax("0")
-  *              .total("10.00")
-  *              .done();
+  *          ->orderId(referenceNumber)
+  *          ->customer()
+  *              ->customerId("1")
+  *              ->done()
+  *          ->shipTo()
+  *              ->addressFirstName("Bill")
+  *              ->addressLastName("Broadleaf")
+  *              ->addressLine1("123 Test Dr.")
+  *              ->addressCityLocality("Austin")
+  *              ->addressStateRegion("TX")
+  *              ->addressPostalCode("78759")
+  *              ->done()
+  *          ->billTo()
+  *              ->addressFirstName("Bill")
+  *              ->addressLastName("Broadleaf")
+  *              ->addressLine1("123 Test Dr.")
+  *              ->addressCityLocality("Austin")
+  *              ->addressStateRegion("TX")
+  *              ->addressPostalCode("78759")
+  *              ->done()
+  *          ->shippingTotal("0")
+  *          ->taxTotal("0")
+  *          ->orderCurrencyCode("USD")
+  *          ->orderDescription("My Order Description")
+  *          ->orderSubtotal("10.00")
+  *          ->transactionTotal("10.00")
+  *          ->lineItem()
+  *              ->name("My Product")
+  *              ->description("My Product Description")
+  *              ->shortDescription("My Product Short Description")
+  *              ->systemId("1")
+  *              ->amount("10.00")
+  *              ->quantity("1")
+  *              ->itemTotal("10.00")
+  *              ->tax("0")
+  *              ->total("10.00")
+  *              ->done();
   * </code></pre>
   *
   * @author Elbert Bautista (elbertbautista)
@@ -62,13 +62,18 @@ class PaymentRequestDTO {
 protected GatewayCustomerDTO<PaymentRequestDTO> customer;
 protected AddressDTO<PaymentRequestDTO> shipTo;
 protected AddressDTO<PaymentRequestDTO> billTo;
-protected CreditCardDTO<PaymentRequestDTO> creditCard;
 protected SubscriptionDTO<PaymentRequestDTO> subscription;
 protected List<GiftCardDTO<PaymentRequestDTO>> giftCards;
 protected List<CustomerCreditDTO<PaymentRequestDTO>> customerCredits;
 protected List<LineItemDTO> lineItems;
 protected Map<String, Object> additionalFields;
 */
+
+    /**
+     * @var CreditCardDTO
+     */
+    protected $creditCard;
+
     /**
      * @var String
      */
@@ -128,11 +133,12 @@ protected Map<String, Object> additionalFields;
     /**
     * You should only call this once, as it will create a new credit card
     * if called more than once. Use the getter if you need to append more information later.
+     * @return CreditCardDTO
     */
-    /*public CreditCardDTO<PaymentRequestDTO> creditCard() {
-        creditCard = new CreditCardDTO<PaymentRequestDTO>(this);
-        return creditCard;
-    }*/
+    public function creditCard() {
+        $this->creditCard = new CreditCardDTO($this);
+        return $this->creditCard;
+    }
 
     /**
       * You should only call this once, as it will create a new subscription
