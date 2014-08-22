@@ -1,5 +1,9 @@
 <?php
 namespace PegasusCommerce\Common\Payment\Dto;
+
+use PegasusCommerce\Common\Payment\Dto\CreditCardDTO;
+use PegasusCommerce\Common\Payment\Dto\SepaBankAccountDTO;
+
 /**
   * <p>
   *     A DTO that is comprised of all the information that is sent to a Payment Gateway
@@ -303,9 +307,19 @@ protected Map<String, Object> additionalFields;
         return billTo;
         }*/
 
-/*        public CreditCardDTO getCreditCard() {
-        return creditCard;
-        }*/
+    /**
+     * @return CreditCardDTO
+     */
+    public function getCreditCard() {
+        return $this->creditCard;
+    }
+
+    /**
+     * @return SepaBankAccountDTO
+     */
+    public function getSepaBankAccount() {
+        return $this->sepaBankAccount;
+    }
 
         /*public SubscriptionDTO getSubscription() {
         return subscription;
