@@ -75,6 +75,11 @@ protected Map<String, Object> additionalFields;
     protected $creditCard;
 
     /**
+     * @var SepaBankAccountDTO
+     */
+    protected $sepaBankAccount;
+
+    /**
      * @var String
      */
     protected $orderId;
@@ -138,6 +143,16 @@ protected Map<String, Object> additionalFields;
     public function creditCard() {
         $this->creditCard = new CreditCardDTO($this);
         return $this->creditCard;
+    }
+
+    /**
+     * You should only call this once, as it will create a new SEPA bank account
+     * if called more than once. Use the getter if you need to append more information later.
+     * @return SepaBankAccountDTO
+     */
+    public function sepaBankAccount() {
+        $this->sepaBankAccount = new SepaBankAccountDTO($this);
+        return $this->sepaBankAccount;
     }
 
     /**
