@@ -118,14 +118,14 @@ class PaymentResponseDTO {
      * A more convenient representation of {@link #rawResponse} to hold the response from the gateway.
      * @var array
      */
-    protected /*Map<String, String>*/ $responseMap;
+    protected $responseMap;
 
     public function __construct(PaymentType $paymentType, PaymentGatewayType $gatewayType) {
         $this->paymentType = $paymentType;
         $this->paymentGatewayType = $gatewayType;
+        $this->responseMap = array();
  //       this.giftCards = new ArrayList<GiftCardDTO<PaymentResponseDTO>>();
 //        this.customerCredits = new ArrayList<CustomerCreditDTO<PaymentResponseDTO>>();
-//        this.responseMap = new HashMap<String, String>();
     }
 
 
@@ -161,17 +161,22 @@ CustomerCreditDTO<PaymentResponseDTO> customerCreditDTO = new CustomerCreditDTO<
         return customerCreditDTO;
     }*/
 
-    /*public PaymentResponseDTO responseMap(String key, String value) {
-    responseMap.put(key, value);
-    return this;
-}*/
+    /**
+     * @param String $key
+     * @param String $value
+     * @return PaymentResponseDTO
+     */
+    public function responseMap($key, $value) {
+        $this->responseMap[ key ] = $value;
+        return $this;
+    }
 
     /**
      * @param String $orderId
      * @return PaymentResponseDTO
      */
     public function orderId($orderId) {
-        $this->orderId = $_COOKIE;
+        $this->orderId = $orderId;
         return $this;
     }
 
@@ -319,7 +324,7 @@ CustomerCreditDTO<PaymentResponseDTO> customerCreditDTO = new CustomerCreditDTO<
     /**
      * @return Array
      */
-    public /*Map<String, String>*/ function getResponseMap() {
+    public function getResponseMap() {
         return $this->responseMap;
     }
 }
