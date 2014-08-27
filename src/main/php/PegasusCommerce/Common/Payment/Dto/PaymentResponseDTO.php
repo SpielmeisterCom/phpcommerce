@@ -167,7 +167,7 @@ CustomerCreditDTO<PaymentResponseDTO> customerCreditDTO = new CustomerCreditDTO<
      * @return PaymentResponseDTO
      */
     public function responseMap($key, $value) {
-        $this->responseMap[ key ] = $value;
+        $this->responseMap[$key] = $value;
         return $this;
     }
 
