@@ -1,6 +1,7 @@
 <?php
 namespace PegasusCommerce\Common\Payment\Service;
 use PegasusCommerce\Common\Payment\Dto\PaymentRequestDTO;
+use PegasusCommerce\Common\Payment\Dto\PaymentResponseDTO;
 use PegasusCommerce\Core\Payment\Service\Exception\PaymentException;
 
 /**
@@ -15,6 +16,7 @@ use PegasusCommerce\Core\Payment\Service\Exception\PaymentException;
  */
 interface PaymentGatewayReportingService {
     /**
+     * @param PaymentRequestDTO $paymentRequestDTO
      * @throws PaymentException
      * @return PaymentResponseDTO
      */
