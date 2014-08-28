@@ -70,8 +70,11 @@ protected SubscriptionDTO<PaymentRequestDTO> subscription;
 protected List<GiftCardDTO<PaymentRequestDTO>> giftCards;
 protected List<CustomerCreditDTO<PaymentRequestDTO>> customerCredits;
 protected List<LineItemDTO> lineItems;
-protected Map<String, Object> additionalFields;
 */
+    /**
+     * @var array
+     */
+    protected $additionalFields;
 
     /**
      * @var CreditCardDTO
@@ -124,10 +127,11 @@ protected Map<String, Object> additionalFields;
     protected $completeCheckoutOnCallback = true;
 
     public function __construct() {
+        $this->additionalFields = array();
     /*$this->giftCards = new ArrayList<GiftCardDTO<PaymentRequestDTO>>();
     $this->customerCredits = new ArrayList<CustomerCreditDTO<PaymentRequestDTO>>();
     $this->lineItems = new ArrayList<LineItemDTO>();
-    $this->additionalFields = new HashMap<String, Object>();*/
+    */
     }
 
     /**
@@ -210,10 +214,15 @@ protected Map<String, Object> additionalFields;
         return new LineItemDTO(this);
     }*/
 
-    /*public PaymentRequestDTO additionalField(String key, Object value) {
-        additionalFields.put(key, value);
-        return this;
-    }*/
+    /**
+     * @param String $key
+     * @param Object $value
+     * @return PaymentRequestDTO
+     */
+    public function additionalField($key, $value) {
+        $this->additionalFields[$key] = $value;
+        return $this;
+    }
 
     /**
      * @param String $orderId
@@ -329,9 +338,12 @@ protected Map<String, Object> additionalFields;
         return customer;
         }*/
 
-        /*public Map<String, Object> getAdditionalFields() {
-        return additionalFields;
-        }*/
+    /**
+     * @return array
+     */
+    public function getAdditionalFields() {
+        return $this->additionalFields;
+    }
 
     /**
      * @return String
