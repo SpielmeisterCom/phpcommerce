@@ -1,11 +1,4 @@
 <?php
-/**
- * Created by IntelliJ IDEA.
- * User: julian
- * Date: 20.08.14
- * Time: 16:38
- */
-
 namespace PegasusCommerce\Common\Payment\Service;
 use PegasusCommerce\Common\Payment\Dto\PaymentRequestDTO;
 use PegasusCommerce\Core\Payment\Service\Exception\PaymentException;
