@@ -2,7 +2,7 @@
     "name": "hauptmedia/hmc",
     "autoload": {
         "psr-0" : {
-            "PegasusCommerce" : "src/main/php"
+            "HMC" : "src"
         }
     },
     "version": "dev-master",
