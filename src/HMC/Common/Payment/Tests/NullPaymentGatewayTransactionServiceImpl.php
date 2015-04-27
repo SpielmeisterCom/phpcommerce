@@ -4,6 +4,7 @@ use HMC\Common\Payment\Dto\PaymentRequestDTO;
 use HMC\Common\Payment\Dto\PaymentResponseDTO;
 use HMC\Common\Payment\Service\PaymentGatewayTransactionService;
 use HMC\Core\Payment\Service\Exception\PaymentException;
+use HMC\Common\Payment\PaymentType;
 
 /**
  * @Service("nullPaymentGatewayTransactionService")
@@ -17,7 +18,7 @@ class NullPaymentGatewayTransactionServiceImpl implements PaymentGatewayTransact
      */
     public function authorize(PaymentRequestDTO $paymentRequestDTO)
     {
-        throw new PaymentException("The Transaction Authorize method is not supported for this module");
+        return new PaymentResponseDTO(PaymentType::$THIRD_PARTY_ACCOUNT, NullPaymentGatewayType::$NULL_GATEWAY);
     }
 
     /**
@@ -27,7 +28,7 @@ class NullPaymentGatewayTransactionServiceImpl implements PaymentGatewayTransact
      */
     public function capture(PaymentRequestDTO $paymentRequestDTO)
     {
-        throw new PaymentException("The Transaction Capture method is not supported for this module");
+        return new PaymentResponseDTO(PaymentType::$THIRD_PARTY_ACCOUNT, NullPaymentGatewayType::$NULL_GATEWAY);
     }
 
     /**
@@ -37,7 +38,7 @@ class NullPaymentGatewayTransactionServiceImpl implements PaymentGatewayTransact
      */
     public function authorizeAndCapture(PaymentRequestDTO $paymentRequestDTO)
     {
-        throw new PaymentException("The Transaction Authorize&Capture method is not supported for this module");
+        return new PaymentResponseDTO(PaymentType::$THIRD_PARTY_ACCOUNT, NullPaymentGatewayType::$NULL_GATEWAY);
     }
 
     /**
@@ -47,7 +48,7 @@ class NullPaymentGatewayTransactionServiceImpl implements PaymentGatewayTransact
      */
     public function reverseAuthorize(PaymentRequestDTO $paymentRequestDTO)
     {
-        throw new PaymentException("The Transaction Reverse Authorize method is not supported for this module");
+        return new PaymentResponseDTO(PaymentType::$THIRD_PARTY_ACCOUNT, NullPaymentGatewayType::$NULL_GATEWAY);
     }
 
     /**
@@ -57,7 +58,7 @@ class NullPaymentGatewayTransactionServiceImpl implements PaymentGatewayTransact
      */
     public function refund(PaymentRequestDTO $paymentRequestDTO)
     {
-        throw new PaymentException("The Transaction Refund method is not supported for this module");
+        return new PaymentResponseDTO(PaymentType::$THIRD_PARTY_ACCOUNT, NullPaymentGatewayType::$NULL_GATEWAY);
     }
 
     /**
@@ -67,6 +68,6 @@ class NullPaymentGatewayTransactionServiceImpl implements PaymentGatewayTransact
      */
     public function voidPayment(PaymentRequestDTO $paymentRequestDTO)
     {
-        throw new PaymentException("The Transaction Void Payment is not supported for this module");
+        return new PaymentResponseDTO(PaymentType::$THIRD_PARTY_ACCOUNT, NullPaymentGatewayType::$NULL_GATEWAY);
     }
 }

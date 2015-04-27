@@ -14,10 +14,10 @@
         </service>
 
         <!-- Null Payment Provider -->
-        <service id="nullPaymentGatewayConfiguration" class="HMC\Common\Payment\Service\NullPaymentGatewayConfigurationImpl"></service>
-        <service id="nullPaymentGatewayRollbackService" class="HMC\Core\Payment\Service\NullPaymentGatewayRollbackServiceImpl"></service>
-        <service id="nullPaymentGatewayTransactionService" class="HMC\Core\Payment\Service\NullPaymentGatewayTransactionServiceImpl"></service>
-        <service id="nullPaymentGatewayConfigurationService" class="HMC\Core\Payment\Service\NullPaymentGatewayConfigurationServiceImpl">
+        <service id="nullPaymentGatewayConfiguration" class="HMC\Common\Payment\Tests\NullPaymentGatewayConfigurationImpl"></service>
+        <service id="nullPaymentGatewayRollbackService" class="HMC\Common\Payment\Tests\NullPaymentGatewayRollbackServiceImpl"></service>
+        <service id="nullPaymentGatewayTransactionService" class="HMC\Common\Payment\Tests\NullPaymentGatewayTransactionServiceImpl"></service>
+        <service id="nullPaymentGatewayConfigurationService" class="HMC\Common\Payment\Tests\NullPaymentGatewayConfigurationServiceImpl">
             <property name="configuration" type="service" id="nullPaymentGatewayConfiguration"/>
             <property name="rollbackService" type="service" id="nullPaymentGatewayRollbackService"/>
             <property name="transactionService" type="service" id="nullPaymentGatewayTransactionService"/>

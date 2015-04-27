@@ -50,8 +50,5 @@ class PaymentGatewayTest extends PHPUnit_Framework_TestCase {
      * @depends testAtLeastOnePaymentGatewayConfigured
      */
     public function testRefund() {
-        $service = $this->getPaymentGatewayConfigurationServiceUnderTest();
-        $this->assertTrue($service->getConfiguration()->handlesRefund());
-
     }
 }

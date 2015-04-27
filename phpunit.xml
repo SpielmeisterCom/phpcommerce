@@ -16,7 +16,7 @@
 
     <testsuites>
         <testsuite name="HMC">
-            <directory>./src/HMC/*/Tests</directory>
+            <directory>src/HMC/Common/Payment/Tests</directory>
         </testsuite>
     </testsuites>
 
