@@ -1,5 +1,5 @@
 <?php
-namespace HMC\Core\Payment\Service;
+namespace HMC\Common\Payment\Tests;
 use HMC\Common\Payment\PaymentGatewayType;
 
 class NullPaymentGatewayType extends PaymentGatewayType {

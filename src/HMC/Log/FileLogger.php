@@ -8,7 +8,7 @@ use Psr\Log\InvalidArgumentException;
 /**
  * This class implements a PSR-3 compatible File Logger
  * Class FileLogger
- * @package PegasusCommerce\Log
+ * @package HMC\Log
  */
 class FileLogger extends AbstractLogger {
     protected $logFile;

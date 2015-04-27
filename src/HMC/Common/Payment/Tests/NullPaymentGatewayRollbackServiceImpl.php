@@ -1,5 +1,5 @@
 <?php
-namespace HMC\Core\Payment\Service;
+namespace HMC\Common\Payment\Tests;
 use HMC\Common\Payment\Dto\PaymentRequestDTO;
 use HMC\Common\Payment\Dto\PaymentResponseDTO;
 use HMC\Common\Payment\PaymentTransactionType;

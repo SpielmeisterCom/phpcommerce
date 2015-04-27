@@ -5,7 +5,7 @@
 
     <services>
         <!-- provide a null payment gateway for tests -->
-        <service id="paymentGatewayConfigurationServiceProvider" class="PegasusCommerce\Common\Payment\Service\PaymentGatewayConfigurationServiceProviderImpl">
+        <service id="paymentGatewayConfigurationServiceProvider" class="HMC\Common\Payment\Service\PaymentGatewayConfigurationServiceProviderImpl">
             <call method="setGatewayConfigurationServices">
                 <argument type="collection">
                     <argument type="service" id="nullPaymentGatewayConfigurationService"/>
@@ -14,10 +14,10 @@
         </service>
 
         <!-- Null Payment Provider -->
-        <service id="nullPaymentGatewayConfiguration" class="PegasusCommerce\Core\Payment\Service\NullPaymentGatewayConfigurationImpl"></service>
-        <service id="nullPaymentGatewayRollbackService" class="PegasusCommerce\Core\Payment\Service\NullPaymentGatewayRollbackServiceImpl"></service>
-        <service id="nullPaymentGatewayTransactionService" class="PegasusCommerce\Core\Payment\Service\NullPaymentGatewayTransactionServiceImpl"></service>
-        <service id="nullPaymentGatewayConfigurationService" class="PegasusCommerce\Core\Payment\Service\NullPaymentGatewayConfigurationServiceImpl">
+        <service id="nullPaymentGatewayConfiguration" class="HMC\Common\Payment\Service\NullPaymentGatewayConfigurationImpl"></service>
+        <service id="nullPaymentGatewayRollbackService" class="HMC\Core\Payment\Service\NullPaymentGatewayRollbackServiceImpl"></service>
+        <service id="nullPaymentGatewayTransactionService" class="HMC\Core\Payment\Service\NullPaymentGatewayTransactionServiceImpl"></service>
+        <service id="nullPaymentGatewayConfigurationService" class="HMC\Core\Payment\Service\NullPaymentGatewayConfigurationServiceImpl">
             <property name="configuration" type="service" id="nullPaymentGatewayConfiguration"/>
             <property name="rollbackService" type="service" id="nullPaymentGatewayRollbackService"/>
             <property name="transactionService" type="service" id="nullPaymentGatewayTransactionService"/>

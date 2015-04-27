@@ -1,5 +1,5 @@
 <?php
-namespace HMC\Core\Payment\Service;
+namespace HMC\Common\Payment\Tests;
 
 use HMC\Common\Payment\Dto\PaymentRequestDTO;
 use HMC\Common\Payment\Service\PaymentGatewayConfigurationServiceProvider;
@@ -16,14 +16,14 @@ class PaymentGatewayTest extends PHPUnit_Framework_TestCase {
 
     public function setUp() {
         $container   = new ContainerBuilder();
-        $loader      = new XmlFileLoader($container, new FileLocator( __DIR__ . '/../../../../../resources'));
+        $loader      = new XmlFileLoader($container, new FileLocator( __DIR__ ));
         $loader->load( 'applicationContext-nullPaymentGateway.xml');
 
         $this->paymentGatewayConfigurationServiceProvider = $container->get('paymentGatewayConfigurationServiceProvider');
     }
 
     /**
-     * @return \PegasusCommerce\Common\Payment\Service\PaymentGatewayConfigurationService
+     * @return HMC\Common\Payment\Service\PaymentGatewayConfigurationService
      */
     protected function getPaymentGatewayConfigurationServiceUnderTest() {
         $gatewayConfigurationServices = $this->paymentGatewayConfigurationServiceProvider->getGatewayConfigurationServices();
