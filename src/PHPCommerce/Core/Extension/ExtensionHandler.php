@@ -1,5 +1,5 @@
 <?php
-namespace PHPCommerce\Common\Extension;
+namespace PHPCommerce\Core\Extension;
 
 /**
  * <p>An extension handler represents a generic pattern used in BroadleafCommerce when an out-of-box service
