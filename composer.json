@@ -2,7 +2,7 @@
     "name": "phpcommerce/core",
     "autoload": {
         "psr-0" : {
-            "HMC" : "src"
+            "PhpCommerce" : "src"
         }
     },
     "version": "dev-master",

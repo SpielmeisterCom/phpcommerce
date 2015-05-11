@@ -15,8 +15,8 @@
         >
 
     <testsuites>
-        <testsuite name="HMC">
-            <directory>src/HMC/Common/Payment/Tests</directory>
+        <testsuite name="PhpCommerce">
+            <directory>src/PhpCommerce/Common/Payment/Tests</directory>
         </testsuite>
     </testsuites>
 
