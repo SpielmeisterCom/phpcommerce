@@ -8,13 +8,12 @@ if (version_compare(PHP_VERSION, '5.4', '>=') && gc_enabled()) {
 
 $loader = require_once __DIR__.'/vendor/autoload.php';
 
-//use Doctrine\Common\Annotations\AnnotationRegistry;
+//use Doctrine\Core\Annotations\AnnotationRegistry;
 
 //AnnotationRegistry::registerLoader(array($loader, 'loadClass'));
 
 $classLoader = new Symfony\Component\ClassLoader\UniversalClassLoader();
-$classLoader->registerNamespace('PegasusCommerce', array(
-    __DIR__.'/src/main/php',
-    __DIR__.'/src/test/php'
+$classLoader->registerNamespace('PHPCommerce', array(
+    __DIR__.'/src',
 ));
 $classLoader->register();
