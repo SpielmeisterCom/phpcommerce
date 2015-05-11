@@ -1,6 +1,6 @@
 <?php
 
-namespace PhpCommerce\Common\Payment\Dto;
+namespace PHPCommerce\Common\Payment\Dto;
 
 /**
  * @author Julian Haupt

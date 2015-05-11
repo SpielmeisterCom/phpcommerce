@@ -1,5 +1,5 @@
 <?php
-namespace PhpCommerce\Common\Payment\Service;
+namespace PHPCommerce\Common\Payment\Service;
 use Symfony\Component\HttpFoundation\Request;
 
 /**

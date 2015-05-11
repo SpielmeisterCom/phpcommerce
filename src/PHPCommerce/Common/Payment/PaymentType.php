@@ -1,5 +1,5 @@
 <?php
-namespace PhpCommerce\Common\Payment;
+namespace PHPCommerce\Common\Payment;
 /**
  * <p>This represents types of payments that can be applied to an order. There might be multiple order payments with the
  * same type on an order if the customer can pay with multiple cards (like 2 credit cards or 3 gift cards).</p>

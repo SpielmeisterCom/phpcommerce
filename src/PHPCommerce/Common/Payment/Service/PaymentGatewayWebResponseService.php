@@ -18,10 +18,10 @@
  *
  * @author Elbert Bautista (elbertbautista)
  */
-namespace PhpCommerce\Common\Payment\Service;
+namespace PHPCommerce\Common\Payment\Service;
 
-use PhpCommerce\Common\Payment\Dto\PaymentResponseDTO;
-use PhpCommerce\Core\Payment\Service\Exception\PaymentException;
+use PHPCommerce\Common\Payment\Dto\PaymentResponseDTO;
+use PHPCommerce\Core\Payment\Service\Exception\PaymentException;
 use Symfony\Component\HttpFoundation\Request;
 
 interface PaymentGatewayWebResponseService {

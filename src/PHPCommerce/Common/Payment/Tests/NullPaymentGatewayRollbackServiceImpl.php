@@ -1,11 +1,11 @@
 <?php
-namespace PhpCommerce\Common\Payment\Tests;
-use PhpCommerce\Common\Payment\Dto\PaymentRequestDTO;
-use PhpCommerce\Common\Payment\Dto\PaymentResponseDTO;
-use PhpCommerce\Common\Payment\PaymentTransactionType;
-use PhpCommerce\Common\Payment\PaymentType;
-use PhpCommerce\Common\Payment\Service\PaymentGatewayRollbackService;
-use PhpCommerce\Core\Payment\Service\Exception\PaymentException;
+namespace PHPCommerce\Common\Payment\Tests;
+use PHPCommerce\Common\Payment\Dto\PaymentRequestDTO;
+use PHPCommerce\Common\Payment\Dto\PaymentResponseDTO;
+use PHPCommerce\Common\Payment\PaymentTransactionType;
+use PHPCommerce\Common\Payment\PaymentType;
+use PHPCommerce\Common\Payment\Service\PaymentGatewayRollbackService;
+use PHPCommerce\Core\Payment\Service\Exception\PaymentException;
 
 /**
  * @Service("nullPaymentGatewayRollbackService")

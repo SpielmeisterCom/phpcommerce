@@ -15,8 +15,8 @@
         >
 
     <testsuites>
-        <testsuite name="PhpCommerce">
-            <directory>src/PhpCommerce/Common/Payment/Tests</directory>
+        <testsuite name="PHPCommerce">
+            <directory>src/PHPCommerce/Common/Payment/Tests</directory>
         </testsuite>
     </testsuites>
 

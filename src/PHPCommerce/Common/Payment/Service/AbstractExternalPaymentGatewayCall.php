@@ -1,9 +1,9 @@
 <?php
-namespace PhpCommerce\Common\Payment\Service;
+namespace PHPCommerce\Common\Payment\Service;
 use Exception;
-use PhpCommerce\Common\Vencor\Service\Type\ServiceStatusType;
-use PhpCommerce\Common\Vendor\Service\Monitor\ServiceStatusDetectable;
-use PhpCommerce\Core\Payment\Service\Exception\PaymentException;
+use PHPCommerce\Common\Vencor\Service\Type\ServiceStatusType;
+use PHPCommerce\Common\Vendor\Service\Monitor\ServiceStatusDetectable;
+use PHPCommerce\Core\Payment\Service\Exception\PaymentException;
 
 /**
  * <p>All payment gateway classes that intend to make an external call, either manually

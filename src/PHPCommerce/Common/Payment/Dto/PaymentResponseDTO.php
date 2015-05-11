@@ -1,8 +1,8 @@
 <?php
-namespace PhpCommerce\Common\Payment\Dto;
-use PhpCommerce\Common\Payment\PaymentGatewayType;
-use PhpCommerce\Common\Payment\PaymentTransactionType;
-use PhpCommerce\Common\Payment\PaymentType;
+namespace PHPCommerce\Common\Payment\Dto;
+use PHPCommerce\Common\Payment\PaymentGatewayType;
+use PHPCommerce\Common\Payment\PaymentTransactionType;
+use PHPCommerce\Common\Payment\PaymentType;
 
 /**
  * <p>The DTO object that represents the response coming back from any call to the Gateway.

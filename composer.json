@@ -1,8 +1,8 @@
 {
-    "name": "phpcommerce/core",
+    "name": "PHPCommerce/core",
     "autoload": {
         "psr-0" : {
-            "PhpCommerce" : "src"
+            "PHPCommerce" : "src"
         }
     },
     "version": "dev-master",

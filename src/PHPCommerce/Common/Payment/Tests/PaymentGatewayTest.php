@@ -1,8 +1,8 @@
 <?php
-namespace PhpCommerce\Common\Payment\Tests;
+namespace PHPCommerce\Common\Payment\Tests;
 
-use PhpCommerce\Common\Payment\Dto\PaymentRequestDTO;
-use PhpCommerce\Common\Payment\Service\PaymentGatewayConfigurationServiceProvider;
+use PHPCommerce\Common\Payment\Dto\PaymentRequestDTO;
+use PHPCommerce\Common\Payment\Service\PaymentGatewayConfigurationServiceProvider;
 use PHPUnit_Framework_TestCase;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -23,7 +23,7 @@ class PaymentGatewayTest extends PHPUnit_Framework_TestCase {
     }
 
     /**
-     * @return PhpCommerce\Common\Payment\Service\PaymentGatewayConfigurationService
+     * @return PHPCommerce\Common\Payment\Service\PaymentGatewayConfigurationService
      */
     protected function getPaymentGatewayConfigurationServiceUnderTest() {
         $gatewayConfigurationServices = $this->paymentGatewayConfigurationServiceProvider->getGatewayConfigurationServices();

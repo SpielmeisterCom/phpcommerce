@@ -1,5 +1,5 @@
 <?php
-namespace PhpCommerce\Common\Extension;
+namespace PHPCommerce\Common\Extension;
 
 /**
  * Base {@link ExtensionHandler} class that provide basic extension handler properties including

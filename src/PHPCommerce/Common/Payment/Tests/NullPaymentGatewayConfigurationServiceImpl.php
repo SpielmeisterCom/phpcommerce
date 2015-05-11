@@ -1,6 +1,6 @@
 <?php
-namespace PhpCommerce\Common\Payment\Tests;
-use PhpCommerce\Common\Payment\Service\PaymentGatewayConfigurationService;
+namespace PHPCommerce\Common\Payment\Tests;
+use PHPCommerce\Common\Payment\Service\PaymentGatewayConfigurationService;
 
 /**
  * @Service("nullPaymentGatewayConfigurationService")

@@ -1,6 +1,6 @@
 <?php
-namespace PhpCommerce\Common\Payment\Tests;
-use PhpCommerce\Common\Payment\PaymentGatewayType;
+namespace PHPCommerce\Common\Payment\Tests;
+use PHPCommerce\Common\Payment\PaymentGatewayType;
 
 class NullPaymentGatewayType extends PaymentGatewayType {
     /**

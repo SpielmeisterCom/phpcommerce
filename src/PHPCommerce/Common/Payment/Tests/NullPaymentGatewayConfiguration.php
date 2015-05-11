@@ -1,6 +1,6 @@
 <?php
-namespace PhpCommerce\Common\Payment\Tests;
-use PhpCommerce\Common\Payment\Service\PaymentGatewayConfiguration;
+namespace PHPCommerce\Common\Payment\Tests;
+use PHPCommerce\Common\Payment\Service\PaymentGatewayConfiguration;
 
 /**
  * @author Elbert Bautista (elbertbautista)

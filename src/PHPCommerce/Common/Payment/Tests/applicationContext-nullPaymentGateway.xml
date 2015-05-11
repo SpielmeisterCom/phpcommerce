@@ -5,7 +5,7 @@
 
     <services>
         <!-- provide a null payment gateway for tests -->
-        <service id="paymentGatewayConfigurationServiceProvider" class="PhpCommerce\Common\Payment\Service\PaymentGatewayConfigurationServiceProviderImpl">
+        <service id="paymentGatewayConfigurationServiceProvider" class="PHPCommerce\Common\Payment\Service\PaymentGatewayConfigurationServiceProviderImpl">
             <call method="setGatewayConfigurationServices">
                 <argument type="collection">
                     <argument type="service" id="nullPaymentGatewayConfigurationService"/>
@@ -14,10 +14,10 @@
         </service>
 
         <!-- Null Payment Provider -->
-        <service id="nullPaymentGatewayConfiguration" class="PhpCommerce\Common\Payment\Tests\NullPaymentGatewayConfigurationImpl"></service>
-        <service id="nullPaymentGatewayRollbackService" class="PhpCommerce\Common\Payment\Tests\NullPaymentGatewayRollbackServiceImpl"></service>
-        <service id="nullPaymentGatewayTransactionService" class="PhpCommerce\Common\Payment\Tests\NullPaymentGatewayTransactionServiceImpl"></service>
-        <service id="nullPaymentGatewayConfigurationService" class="PhpCommerce\Common\Payment\Tests\NullPaymentGatewayConfigurationServiceImpl">
+        <service id="nullPaymentGatewayConfiguration" class="PHPCommerce\Common\Payment\Tests\NullPaymentGatewayConfigurationImpl"></service>
+        <service id="nullPaymentGatewayRollbackService" class="PHPCommerce\Common\Payment\Tests\NullPaymentGatewayRollbackServiceImpl"></service>
+        <service id="nullPaymentGatewayTransactionService" class="PHPCommerce\Common\Payment\Tests\NullPaymentGatewayTransactionServiceImpl"></service>
+        <service id="nullPaymentGatewayConfigurationService" class="PHPCommerce\Common\Payment\Tests\NullPaymentGatewayConfigurationServiceImpl">
             <property name="configuration" type="service" id="nullPaymentGatewayConfiguration"/>
             <property name="rollbackService" type="service" id="nullPaymentGatewayRollbackService"/>
             <property name="transactionService" type="service" id="nullPaymentGatewayTransactionService"/>

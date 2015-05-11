@@ -1,8 +1,8 @@
 <?php
-namespace PhpCommerce\Common\Payment\Service;
+namespace PHPCommerce\Common\Payment\Service;
 
-use PhpCommerce\Common\Payment\Service\PaymentGatewayConfiguration;
-use PhpCommerce\Common\Payment\Service\PaymentGatewayTransparentRedirectService;
+use PHPCommerce\Common\Payment\Service\PaymentGatewayConfiguration;
+use PHPCommerce\Common\Payment\Service\PaymentGatewayTransparentRedirectService;
 
 /**
 * Each payment gateway module should configure an instance of this. In order for multiple gateways to exist in the system

@@ -1,5 +1,5 @@
 <?php
-namespace PhpCommerce;
+namespace PHPCommerce;
 
 use Symfony\Component\Debug\ErrorHandler;
 

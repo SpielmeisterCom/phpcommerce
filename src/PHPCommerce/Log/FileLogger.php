@@ -1,5 +1,5 @@
 <?php
-namespace PhpCommerce\Log;
+namespace PHPCommerce\Log;
 
 use Psr\Log\AbstractLogger;
 use Psr\Log\LogLevel;
@@ -8,7 +8,7 @@ use Psr\Log\InvalidArgumentException;
 /**
  * This class implements a PSR-3 compatible File Logger
  * Class FileLogger
- * @package PhpCommerce\Log
+ * @package PHPCommerce\Log
  */
 class FileLogger extends AbstractLogger {
     protected $logFile;

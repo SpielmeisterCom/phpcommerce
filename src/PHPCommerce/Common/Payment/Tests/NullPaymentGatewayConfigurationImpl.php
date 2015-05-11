@@ -1,6 +1,6 @@
 <?php
-namespace PhpCommerce\Common\Payment\Tests;
-use PhpCommerce\Common\Payment\PaymentGatewayType;
+namespace PHPCommerce\Common\Payment\Tests;
+use PHPCommerce\Common\Payment\PaymentGatewayType;
 
 /**
 * In order to use load this demo service, you will need to component scan

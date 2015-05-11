@@ -1,8 +1,8 @@
 <?php
-namespace PhpCommerce\Common\Payment\Service;
-use PhpCommerce\Common\Payment\Dto\PaymentRequestDTO;
-use PhpCommerce\Common\Payment\Dto\PaymentResponseDTO;
-use PhpCommerce\Core\Payment\Service\Exception\PaymentException;
+namespace PHPCommerce\Common\Payment\Service;
+use PHPCommerce\Common\Payment\Dto\PaymentRequestDTO;
+use PHPCommerce\Common\Payment\Dto\PaymentResponseDTO;
+use PHPCommerce\Core\Payment\Service\Exception\PaymentException;
 
 /**
  * <p>This is a decoupled interface that provides

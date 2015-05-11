@@ -1,8 +1,8 @@
 <?php
-namespace PhpCommerce\Common\Payment\Dto;
+namespace PHPCommerce\Common\Payment\Dto;
 
-use PhpCommerce\Common\Payment\Dto\CreditCardDTO;
-use PhpCommerce\Common\Payment\Dto\SepaBankAccountDTO;
+use PHPCommerce\Common\Payment\Dto\CreditCardDTO;
+use PHPCommerce\Common\Payment\Dto\SepaBankAccountDTO;
 
 /**
   * <p>

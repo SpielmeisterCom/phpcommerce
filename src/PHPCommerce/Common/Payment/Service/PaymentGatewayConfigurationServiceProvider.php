@@ -1,6 +1,6 @@
 <?php
-namespace PhpCommerce\Common\Payment\Service;
-use PhpCommerce\Common\Payment\PaymentGatewayType;
+namespace PHPCommerce\Common\Payment\Service;
+use PHPCommerce\Common\Payment\PaymentGatewayType;
 
 /**
  * <p>This represents the main servic bus for grabbing configurations to configured payment gateways to execute service calls

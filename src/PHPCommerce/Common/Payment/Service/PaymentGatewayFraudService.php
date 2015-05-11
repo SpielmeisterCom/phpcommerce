@@ -1,6 +1,6 @@
 <?php
-namespace PhpCommerce\Common\Payment\Service;
-use PhpCommerce\Common\Payment\Dto\PaymentRequestDTO;
+namespace PHPCommerce\Common\Payment\Service;
+use PHPCommerce\Common\Payment\Dto\PaymentRequestDTO;
 
 /**
  * <p>Certain Payment Integrations allow you to use Fraud Services like Address Verification and Buyer Authentication,

@@ -1,10 +1,10 @@
 <?php
-namespace PhpCommerce\Common\Payment\Tests;
-use PhpCommerce\Common\Payment\Dto\PaymentRequestDTO;
-use PhpCommerce\Common\Payment\Dto\PaymentResponseDTO;
-use PhpCommerce\Common\Payment\Service\PaymentGatewayTransactionService;
-use PhpCommerce\Core\Payment\Service\Exception\PaymentException;
-use PhpCommerce\Common\Payment\PaymentType;
+namespace PHPCommerce\Common\Payment\Tests;
+use PHPCommerce\Common\Payment\Dto\PaymentRequestDTO;
+use PHPCommerce\Common\Payment\Dto\PaymentResponseDTO;
+use PHPCommerce\Common\Payment\Service\PaymentGatewayTransactionService;
+use PHPCommerce\Core\Payment\Service\Exception\PaymentException;
+use PHPCommerce\Common\Payment\PaymentType;
 
 /**
  * @Service("nullPaymentGatewayTransactionService")
