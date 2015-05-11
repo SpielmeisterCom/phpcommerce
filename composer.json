@@ -1,12 +1,12 @@
 {
-    "name": "hauptmedia/hmc",
+    "name": "phpcommerce/core",
     "autoload": {
         "psr-0" : {
             "HMC" : "src"
         }
     },
     "version": "dev-master",
-    "description": "Hauptmedia Commerce Core",
+    "description": "PHPCommerce Core",
     "minimum-stability": "dev",
     "license": "Apache-2.0",
     "authors": [
