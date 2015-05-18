@@ -7,7 +7,7 @@
     },
     "version": "dev-master",
     "description": "PHPCommerce Core",
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "license": "Apache-2.0",
     "authors": [
         {
@@ -18,6 +18,7 @@
     "require": {
         "php": ">=5.4.0",
         "ext-curl": "*",
+        "guzzlehttp/guzzle": "~5",
         "psr/log": "1.0.0",
         "symfony/config": "v2.6.7",
         "symfony/dependency-injection": "v2.6.7",
