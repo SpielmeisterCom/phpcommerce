@@ -16,6 +16,6 @@ class PHPCommerceCoreExtension extends Extension
 
     public function getAlias()
     {
-        return 'phpcommerce_core';
+        return 'php_commerce_core';
     }
 }
