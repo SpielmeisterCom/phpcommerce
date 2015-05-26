@@ -4,7 +4,7 @@ use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 use Symfony\Component\Config\FileLocator;
 
-class AcmeDemoExtension extends Extension
+class PHPCommerceCoreExtension extends Extension
 {
     public function load(array $configs, ContainerBuilder $container)
     {
