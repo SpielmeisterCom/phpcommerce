@@ -10,6 +10,7 @@ Add to your `AppKernel.php`:
         $bundles = array(
             //...
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
+            new Symfony\Cmf\Bundle\RoutingBundle\CmfRoutingBundle(),
             new PHPCommerce\CoreBundle\PHPCommerceCoreBundle()
         );
         
