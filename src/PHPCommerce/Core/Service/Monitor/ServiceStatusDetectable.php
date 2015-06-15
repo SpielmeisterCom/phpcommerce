@@ -1,5 +1,5 @@
 <?php
-namespace PHPCommerce\Service\Monitor;
+namespace PHPCommerce\Core\Service\Monitor;
 
 use PHPCommerce\Service\Type\ServiceStatusType;
 
