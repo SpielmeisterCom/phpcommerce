@@ -11,16 +11,18 @@
          processIsolation            = "false"
          stopOnFailure               = "false"
          syntaxCheck                 = "false"
-         bootstrap                   = "autoload.php.dist.php"
+         bootstrap                   = "app/autoload.php"
         >
 
     <testsuites>
         <testsuite name="PHPCommerce">
-            <directory>src/CoreBundle/Tests</directory>
+            <directory>src/PHPCommerce/Tests</directory>
+            <directory>src/PHPCommerce/PaymentBundle/Tests</directory>
         </testsuite>
     </testsuites>
 
     <php>
+        <server name="KERNEL_DIR" value="app" />
         <const name="PHPUNIT_TESTSUITE" value="true"/>
     </php>
 </phpunit>

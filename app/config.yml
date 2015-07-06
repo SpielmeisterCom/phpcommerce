@@ -1,0 +1,23 @@
+imports:
+    - { resource: ../../Resources/config/config.yml }
+
+
+framework:
+    secret: ""
+
+
+doctrine:
+    dbal:
+        default_connection: default
+        connections:
+            default:
+                driver:   pdo_sqlite
+                path:     %kernel.cache_dir%/test.db
+
+    orm:
+        mappings:
+            Payment:
+                type: yml
+                is_bundle: false
+                prefix: PHPCommerce\Payment\Entity
+                dir: %kernel.root_dir%/../../Resources/config/doctrine

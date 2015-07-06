@@ -1,0 +1,8 @@
+PHPCommerce\Payment\Entity\OrderPayment:
+  type: entity
+  table: order_payment
+
+  id:
+    id:
+      type: integer
+      generator: { strategy: AUTO }

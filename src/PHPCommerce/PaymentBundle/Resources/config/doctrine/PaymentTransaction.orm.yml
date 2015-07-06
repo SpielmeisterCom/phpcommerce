@@ -1,0 +1,32 @@
+PHPCommerce\Payment\Entity\PaymentTransaction:
+  type: entity
+  table: payment_transaction
+
+  id:
+    id:
+      type: integer
+      generator: { strategy: AUTO }
+
+  fields:
+    date:
+      type: datetime
+      column: date
+      nullable: false
+
+    customer_ip_address:
+      type: string
+      column: customer_ip_address
+      nullable: false
+
+  manyToOne:
+    parent_transaction:
+      targetEntity: PHPCommerce\Payment\Entity\PaymentTransaction
+      joinColumn:
+        name: parent_transaction
+        referencedColumnName: id
+
+    order_payment:
+      targetEntity: PHPCommerce\Payment\Entity\OrderPayment
+      joinColumn:
+        name: order_payment
+        referencedColumnName: id

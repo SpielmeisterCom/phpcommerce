@@ -1,2 +1,4 @@
 vendor/
 .idea/
+src/PHPCommerce/PaymentBundle/Tests/app/cache
+src/PHPCommerce/PaymentBundle/Tests/app/logs
