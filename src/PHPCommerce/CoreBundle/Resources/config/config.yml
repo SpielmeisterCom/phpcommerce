@@ -1,0 +1,4 @@
+services:
+    phpcommerce.payment.gateway.configuration_service_provider:
+        class:        PHPCommerce\Payment\Service\PaymentGatewayConfigurationServiceProviderImpl
+
