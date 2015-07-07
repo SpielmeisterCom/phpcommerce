@@ -19,5 +19,5 @@ doctrine:
             Payment:
                 type: yml
                 is_bundle: false
-                prefix: PHPCommerce\Payment\Entity
+                prefix: PHPCommerce\Entity
                 dir: %kernel.root_dir%/../src/PHPCommerce/CoreBundle/Resources/config/doctrine

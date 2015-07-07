@@ -1,5 +1,5 @@
 <?php
-namespace PHPCommerce\Payment\Entity;
+namespace PHPCommerce\Entity;
 
 /**
  * <p>This entity is designed to deal with payments associated to an {@link Order} and is <i>usually</i> unique for a particular

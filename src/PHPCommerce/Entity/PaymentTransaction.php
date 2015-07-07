@@ -1,7 +1,5 @@
 <?php
-namespace PHPCommerce\Payment\Entity;
-
-use Doctrine\ORM\Mapping as ORM;
+namespace PHPCommerce\Entity;
 
 class PaymentTransaction /* extends Serializable, Status, AdditionalFields */ {
     /**

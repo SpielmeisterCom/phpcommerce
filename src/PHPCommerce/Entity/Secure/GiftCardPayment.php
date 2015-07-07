@@ -1,5 +1,5 @@
 <?php
-namespace PHPCommerce\Payment\Domain\Secure;
+namespace PHPCommerce\Entity\Secure;
 
 /**
  * Entity associated with sensitive, secured bank account data. This data is stored specifically in the blSecurePU persistence.

@@ -1,5 +1,5 @@
 <?php
-namespace PHPCommerce\Payment\Domain\Secure;
+namespace PHPCommerce\Entity\Secure;
 
 /**
  * <p>The main interface used to store extra-secure data such as credit card, bank accounts and gift card data. All entities
