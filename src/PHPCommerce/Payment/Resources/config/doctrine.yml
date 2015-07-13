@@ -1,0 +1,11 @@
+doctrine:
+  orm:
+    entity_managers:
+      default:
+        mappings:
+          Payment:
+            mapping: true
+            type: yml
+            dir: %kernel.root_dir%/../src/PHPCommerce/Payment/Resources/config/doctrine
+            is_bundle: false
+            prefix: PHPCommerce\Payment\Entity
