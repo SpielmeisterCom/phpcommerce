@@ -1,6 +1,6 @@
-[![Build Status](https://travis-ci.org/phpcommerce/core.svg)](https://travis-ci.org/phpcommerce/core) [![Coverage Status](https://coveralls.io/repos/phpcommerce/core/badge.svg)](https://coveralls.io/r/phpcommerce/core)
+[![Build Status](https://travis-ci.org/phpcommerce/phpcommerce.svg)](https://travis-ci.org/phpcommerce/phpcommerce) [![Coverage Status](https://coveralls.io/repos/phpcommerce/phpcommerce/badge.svg)](https://coveralls.io/r/phpcommerce/phpcommerce)
 
-To get started add `phpcommerce/core` as a composer dependency and add the following bundles to your Symfony project:
+To get started add `phpcommerce/phpcommerce` as a composer dependency and add the following bundles to your Symfony project:
 
 Add to your `AppKernel.php`:
 
@@ -11,7 +11,7 @@ Add to your `AppKernel.php`:
             //...
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new Symfony\Cmf\Bundle\RoutingBundle\CmfRoutingBundle(),
-            new PHPCommerce\CoreBundle\PHPCommerceCoreBundle()
+            new PHPCommerce\Bundle\PHPCommerceBundle()
         );
         
         return $bundles;
