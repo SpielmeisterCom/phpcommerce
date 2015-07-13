@@ -1,6 +1,6 @@
-PHPCommerce\Entity\Order:
+PHPCommerce\Payment\Entity\OrderPayment:
   type: entity
-  table: order
+  table: order_payment
 
   id:
     id:

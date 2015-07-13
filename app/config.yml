@@ -20,4 +20,4 @@ doctrine:
                 type: yml
                 is_bundle: false
                 prefix: PHPCommerce\Payment\Entity
-                dir: %kernel.root_dir%/../src/PHPCommerce/Bundle/Resources/config/doctrine
+                dir: %kernel.root_dir%/../src/PHPCommerce/Payment/Resources/config/doctrine

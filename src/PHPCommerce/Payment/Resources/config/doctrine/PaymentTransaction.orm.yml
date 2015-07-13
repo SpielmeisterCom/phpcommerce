@@ -1,4 +1,4 @@
-PHPCommerce\Entity\PaymentTransaction:
+PHPCommerce\Payment\Entity\PaymentTransaction:
   type: entity
   table: payment_transaction
 
@@ -20,13 +20,13 @@ PHPCommerce\Entity\PaymentTransaction:
 
   manyToOne:
     parent_transaction:
-      targetEntity: PHPCommerce\Entity\PaymentTransaction
+      targetEntity: PHPCommerce\Payment\Entity\PaymentTransaction
       joinColumn:
         name: parent_transaction
         referencedColumnName: id
 
     order_payment:
-      targetEntity: PHPCommerce\Entity\OrderPayment
+      targetEntity: PHPCommerce\Payment\Entity\OrderPayment
       joinColumn:
         name: order_payment
         referencedColumnName: id

@@ -1,5 +1,5 @@
 <?php
-namespace PHPCommerce\Entity;
+namespace PHPCommerce\Payment\Entity;
 
 class PaymentTransaction /* extends Serializable, Status, AdditionalFields */ {
     /**

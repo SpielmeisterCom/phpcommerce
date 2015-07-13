@@ -1,5 +1,5 @@
 <?php
-namespace PHPCommerce\Entity;
+namespace PHPCommerce\ERP\Entity;
 
 class Order {
     protected $id;
