@@ -1,12 +1,12 @@
 <?php
-namespace PHPCommerce\CoreBundle\DependencyInjection;
+namespace PHPCommerce\Bundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 use Symfony\Component\Config\FileLocator;
 
-class PHPCommerceCoreExtension extends Extension
+class PHPCommerceExtension extends Extension
 {
     public function load(array $configs, ContainerBuilder $container)
     {
@@ -16,6 +16,6 @@ class PHPCommerceCoreExtension extends Extension
 
     public function getAlias()
     {
-        return 'php_commerce_core';
+        return 'php_commerce';
     }
 }

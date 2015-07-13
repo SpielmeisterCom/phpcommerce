@@ -1,5 +1,5 @@
 <?php
-namespace PHPCommerce\CoreBundle\Tests;
+namespace PHPCommerce\Bundle\Tests;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 

@@ -1,5 +1,5 @@
 <?php
-namespace PHPCommerce\CoreBundle\DependencyInjection\Compiler;
+namespace PHPCommerce\Bundle\DependencyInjection\Compiler;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;

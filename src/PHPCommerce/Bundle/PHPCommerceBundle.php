@@ -1,10 +1,10 @@
 <?php
-namespace PHPCommerce\CoreBundle;
-use PHPCommerce\CoreBundle\DependencyInjection\Compiler\PaymentGatewayCompilerPass;
+namespace PHPCommerce\Bundle;
+use PHPCommerce\Bundle\DependencyInjection\Compiler\PaymentGatewayCompilerPass;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class PHPCommerceCoreBundle extends Bundle
+class PHPCommerceBundle extends Bundle
 {
     public function build(ContainerBuilder $container)
     {

@@ -1,5 +1,5 @@
 <?php
-namespace PHPCommerce\Payment\Tests;
+namespace PHPCommerce\Bundle\Tests;
 
 use Doctrine\Common\Persistence\ObjectRepository;
 use PHPCommerce\Payment\Entity\OrderPayment;
