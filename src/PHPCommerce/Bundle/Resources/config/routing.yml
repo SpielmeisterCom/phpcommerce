@@ -1,0 +1,6 @@
+ERP:
+    resource: "../../../ERP/Resources/config/routing.yml"
+
+Payment:
+    resource: "../../../Payment/Resources/config/routing.yml"
+

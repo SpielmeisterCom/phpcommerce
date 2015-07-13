@@ -9,3 +9,5 @@ imports:
     - { resource: "../../../Payment/Resources/config/config.yml" }
     - { resource: "../../../ERP/Resources/config/config.yml" }
 
+framework:
+    router: { resource: "%kernel.root_dir%/../src/PHPCommerce/Bundle/Resources/config/routing.yml" }
