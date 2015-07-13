@@ -4,3 +4,6 @@ ERP:
 Payment:
     resource: "../../../Payment/Resources/config/routing.yml"
 
+Shop:
+    resource: "../../../Shop/Resources/config/routing.yml"
+
