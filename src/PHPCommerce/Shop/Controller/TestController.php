@@ -1,5 +1,5 @@
 <?php
-namespace PHPCommerce\Bundle\Controller;
+namespace PHPCommerce\Shop\Controller;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
