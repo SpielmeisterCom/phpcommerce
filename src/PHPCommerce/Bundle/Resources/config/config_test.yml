@@ -7,7 +7,7 @@ framework:
         storage_id: session.storage.mock_file
     profiler:
         collect: false
-use pdo_sqlite database
+
 parameters:
     database_driver: pdo_sqlite
     database_path: %kernel.cache_dir%/test.db
