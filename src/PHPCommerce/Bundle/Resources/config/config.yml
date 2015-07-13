@@ -1,4 +1,9 @@
-services:
-    phpcommerce.payment.gateway.configuration_service_provider:
-        class:        PHPCommerce\Payment\Service\PaymentGatewayConfigurationServiceProviderImpl
+imports:
+    - { resource: parameters.yml }
+    - { resource: "bundles/framework.yml" }
+    - { resource: "bundles/twig.yml" }
+    - { resource: "bundles/doctrine.yml" }
+    - { resource: "bundles/doctrine_orm.yml" }
+    - { resource: "bundles/doctrine_cache.yml" }
+
 

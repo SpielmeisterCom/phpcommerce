@@ -1,0 +1,22 @@
+framework:
+    secret:          "%secret%"
+    router:
+        resource: ~
+    #    strict_requirements: ~
+    form:            ~
+    csrf_protection: false
+    templating:
+        engines: ['php']
+    #    #assets_version: SomeVersionScheme
+    default_locale:  "%locale%"
+    trusted_hosts:   ~
+    trusted_proxies: ~
+    serializer:
+        enabled: true
+    session:
+      cookie_lifetime: 31449600
+      cookie_domain: /
+      save_path: ~
+      name: adn
+    fragments:       ~
+    http_method_override: true

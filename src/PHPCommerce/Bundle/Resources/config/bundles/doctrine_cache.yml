@@ -1,0 +1,12 @@
+#doctrine_cache:
+#  aliases:
+#    usac.cache.main: %usac_cache_main%
+#
+#  providers:
+#    runtime:
+#      array: ~
+#
+#    cache_dir:
+#      php_file:
+#        extension: .cache.php
+#        directory: %kernel.cache_dir%/doctrine_cache

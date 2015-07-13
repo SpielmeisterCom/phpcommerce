@@ -1,0 +1,2 @@
+imports:
+    - { resource: services/configuration_service_provider.yml }
