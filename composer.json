@@ -1,5 +1,5 @@
 {
-    "name": "PHPCommerce/core",
+    "name": "phpcommerce/phpcommerce",
     "autoload": {
         "psr-0" : {
             "PHPCommerce" : "src"
