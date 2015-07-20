@@ -62,19 +62,19 @@ class OrderPayment {
      * is required (like gift cards or account credit)
      * @return Address
      */
- /*   public function getBillingAddress()
+    public function getBillingAddress()
     {
 
-    }*/
+    }
 
     /**
      * Sets the billing address associated with this payment. This might be null for some payments where no billing address
      * is required (like gift cards or account credit)
      */
-  /*  public function setBillingAddress(Address $billingAddress)
+    public function setBillingAddress(Address $billingAddress)
     {
 
-    }*/
+    }
 
     /**
      * The amount that this payment is allotted for. The summation of all of the {@link OrderPayment}s for a particular
