@@ -22,7 +22,12 @@ use PHPCommerce\ERP\Entity\Order;
 class PaymentEntitiesTest extends AbstractDoctrineTest
 {
     public function testOrderPayment() {
+        $order = new Order();
+        $this->em->persist($order);
+
         $orderpayment = new OrderPayment();
+        $orderpayment->setOrder($order);
+
         $this->em->persist($orderpayment);
         $this->em->flush();
 

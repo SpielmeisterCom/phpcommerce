@@ -1,5 +1,6 @@
 <?php
 namespace PHPCommerce\Payment\Entity;
+use PHPCommerce\ERP\Entity\Order;
 
 /**
  * <p>This entity is designed to deal with payments associated to an {@link Order} and is <i>usually</i> unique for a particular
@@ -20,10 +21,13 @@ namespace PHPCommerce\Payment\Entity;
  * @see {@link PaymentType}
  * @author Phillip Verheyden (phillipuniverse)
  */
-class OrderPayment /*extends Serializable, Status*/ {
+class OrderPayment {
     protected $id;
 
-    //protected $order;
+    /**
+     * @var Order
+     */
+    protected $order;
 
     public function getId()
     {
@@ -38,20 +42,20 @@ class OrderPayment /*extends Serializable, Status*/ {
     /**
      * @return Order
      */
-  /*  public function getOrder()
+    public function getOrder()
     {
         return $this->order;
     }
-*/
+
     /**
      * @param Order $order
      * @return mixed
      */
-  /*  public function setOrder(Order $order)
+    public function setOrder(Order $order)
     {
         $this->order = $order;
     }
-*/
+
     /**
      * Gets the billing address associated with this payment. This might be null for some payments where no billing address
      * is required (like gift cards or account credit)

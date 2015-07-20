@@ -6,3 +6,12 @@ PHPCommerce\Payment\Entity\OrderPayment:
     id:
       type: integer
       generator: { strategy: AUTO }
+
+  manyToOne:
+    order:
+      targetEntity: PHPCommerce\ERP\Entity\Order
+      inversedBy: payments
+      joinColumn:
+        name: order_id
+        referencedColumnName: id
+        nullable: false
