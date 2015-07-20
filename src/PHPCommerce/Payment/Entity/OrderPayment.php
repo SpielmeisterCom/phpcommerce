@@ -27,7 +27,7 @@ class OrderPayment {
     /**
      * @var Order
      */
-    protected $order;
+    private $order;
 
     public function getId()
     {

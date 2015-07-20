@@ -21,22 +21,33 @@ use PHPCommerce\ERP\Entity\Order;
 
 class PaymentEntitiesTest extends AbstractDoctrineTest
 {
-    public function testOrderPayment() {
+    public function testOrderPayment()
+    {
         $order = new Order();
         $this->em->persist($order);
 
         $orderpayment = new OrderPayment();
         $orderpayment->setOrder($order);
-
         $this->em->persist($orderpayment);
+
+        $orderpayment2 = new OrderPayment();
+        $orderpayment2->setOrder($order);
+        $this->em->persist($orderpayment2);
+
         $this->em->flush();
 
-        /** @var ObjectRepository $orderpaymentRepository */
+        /** @var ObjectRepository  $orderpaymentRepository */
         $orderpaymentRepository = $this->em->getRepository('PHPCommerce\Payment\Entity\OrderPayment');
-
         $orderpayments = $orderpaymentRepository->findAll();
 
-        $this->assertCount(1, $orderpayments);
+        $this->assertCount(2, $orderpayments);
+
+        $orderRepository = $this->em->getRepository('PHPCommerce\ERP\Entity\Order');
+        $orders = $orderRepository->findAll();
+        $this->assertCount(1, $orders);
+
+        $payments = $orders[0]->getPayments();
+        $this->assertCount(2, $payments);
     }
 }
 

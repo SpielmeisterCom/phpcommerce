@@ -6,3 +6,8 @@ PHPCommerce\ERP\Entity\Order:
     id:
       type: integer
       generator: { strategy: AUTO }
+
+  oneToMany:
+    payments:
+      targetEntity: PHPCommerce\Payment\Entity\OrderPayment
+      mappedBy: order
