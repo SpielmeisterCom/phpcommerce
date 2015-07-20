@@ -16,8 +16,9 @@
 
     <testsuites>
         <testsuite name="PHPCommerce">
-            <directory>src/PHPCommerce/ERP/Tests</directory>
             <directory>src/PHPCommerce/Bundle/Tests</directory>
+            <directory>src/PHPCommerce/ERP/Tests</directory>
+            <directory>src/PHPCommerce/Payment/Tests</directory>
             <directory>src/PHPCommerce/Shop/Tests</directory>
         </testsuite>
     </testsuites>

@@ -1,5 +1,5 @@
 <?php
-namespace PHPCommerce\Bundle\Tests;
+namespace PHPCommerce\Payment\Tests;
 
 use PHPCommerce\Payment\Dto\PaymentRequestDTO;
 use PHPCommerce\Payment\Service\PaymentGatewayConfigurationServiceProvider;
