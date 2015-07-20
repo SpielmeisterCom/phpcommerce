@@ -1,0 +1,8 @@
+PHPCommerce\ERP\Entity\Address:
+  type: entity
+  table: address
+
+  id:
+    id:
+      type: integer
+      generator: { strategy: AUTO }

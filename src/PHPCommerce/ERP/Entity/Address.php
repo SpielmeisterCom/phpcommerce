@@ -1,15 +1,13 @@
 <?php
+namespace PHPCommerce\ERP\Entity;
+
+class Address
+{
+    protected $id;
+
+}
+
 /*
-package org.broadleafcommerce.profile.core.domain;
-
-import java.io.Serializable;
-
-public interface Address extends Serializable {
-
-public void setId(Long id);
-
-public Long getId();
-
 public void setAddressLine1(String addressLine1);
 
 public String getAddressLine1();
