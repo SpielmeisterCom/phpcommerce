@@ -54,6 +54,7 @@ class OrderPayment {
     public function setOrder(Order $order)
     {
         $this->order = $order;
+        $order->addPayment($this);
     }
 
     /**

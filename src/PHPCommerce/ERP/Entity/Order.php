@@ -32,6 +32,11 @@ class Order {
         $this->id = $id;
     }
 
+    public function addPayment(OrderPayment $orderPayment)
+    {
+        $this->payments->add($orderPayment);
+    }
+
     /**
      * @return OrderPayment[]
      */
