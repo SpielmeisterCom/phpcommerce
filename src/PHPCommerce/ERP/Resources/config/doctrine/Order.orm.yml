@@ -1,6 +1,6 @@
 PHPCommerce\ERP\Entity\Order:
   type: entity
-  table: order
+  table: `order`
 
   id:
     id:
