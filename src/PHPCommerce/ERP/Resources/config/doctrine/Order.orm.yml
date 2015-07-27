@@ -11,3 +11,5 @@ PHPCommerce\ERP\Entity\Order:
     payments:
       targetEntity: PHPCommerce\Payment\Entity\OrderPayment
       mappedBy: order
+      cascade:
+        - persist

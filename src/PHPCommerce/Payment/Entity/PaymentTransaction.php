@@ -34,8 +34,14 @@ class PaymentTransaction /* extends Serializable, Status, AdditionalFields */ {
 
     protected $customer_ip_address;
 
+    /**
+     * @var PaymentTransaction
+     */
     protected $parent_transaction;
 
+    /**
+     * @var OrderPayment
+     */
     protected $order_payment;
 
     public function getId() {

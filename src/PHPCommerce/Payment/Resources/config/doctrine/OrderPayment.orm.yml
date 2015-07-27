@@ -22,6 +22,8 @@ PHPCommerce\Payment\Entity\OrderPayment:
     order:
       targetEntity: PHPCommerce\ERP\Entity\Order
       inversedBy: payments
+      cascade:
+        - persist
       joinColumn:
         name: order_id
         referencedColumnName: id

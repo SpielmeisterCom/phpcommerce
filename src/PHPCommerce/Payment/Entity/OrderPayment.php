@@ -1,5 +1,6 @@
 <?php
 namespace PHPCommerce\Payment\Entity;
+use Doctrine\Common\Collections\ArrayCollection;
 use PHPCommerce\ERP\Entity\Order;
 use PHPCommerce\Payment\PaymentGatewayType;
 use PHPCommerce\Payment\PaymentType;
@@ -40,6 +41,16 @@ class OrderPayment {
      * @var PaymentGatewayType
      */
     protected $gateway_type;
+
+    /**
+     * @var PaymentTransaction[]
+     */
+    protected $transactions;
+
+    public function __construct()
+    {
+        $this->transactions = new ArrayCollection();
+    }
 
     public function getId()
     {
@@ -114,6 +125,45 @@ class OrderPayment {
      }
 
     /**
+     * <p>All of the transactions that have been applied to this particular payment. Transactions are denoted by the various
+     * {@link PaymentTransactionType}s. In almost all scenarios (as in, 99.9999% of all cases) there will be a at least one
+     * {@link PaymentTransaction} for every {@link OrderPayment}.</p>
+     *
+     * <p>To add a transaction to an {@link OrderPayment} see {@link #addTransaction(PaymentTransaction)}.</p>
+     *
+     * @see {@link #addTransaction(PaymentTransaction)}
+     * @return PaymentTransaction[]
+     */
+     public function getTransactions()
+     {
+        return $this->transactions;
+     }
+
+    /**
+     * <p>All of the transactions that have been applied to this particular payment. Transactions are denoted by the various
+     * {@link PaymentTransactionType}s. In almost all scenarios (as in, 99.9999% of all cases) there will be a at least one
+     * {@link PaymentTransaction} for every {@link OrderPayment}.</p>
+     *
+     * <p>To add a transaction to an {@link OrderPayment} see {@link #addTransaction(PaymentTransaction)}.</p>
+     *
+     * @see {@link #addTransaction(PaymentTransaction)}
+     * @param PaymentTransaction
+     */
+     public function setTransactions($transactions)
+     {
+        $this->transactions = $transactions;
+     }
+
+    /**
+     * A more declarative way to invoke {@link #getTransactions().add()}. This is the preferred way to add a transaction
+     * to this payment.
+     */
+     public function addTransaction(PaymentTransaction $transaction)
+     {
+        $this->transactions->add($transaction);
+     }
+
+    /**
      * The amount that this payment is allotted for. The summation of all of the {@link OrderPayment}s for a particular
      * {@link Order} should equal {@link Order#getTotal()}
      * @return Money
@@ -151,45 +201,6 @@ class OrderPayment {
 
     }*/
 
-
-    /**
-     * <p>All of the transactions that have been applied to this particular payment. Transactions are denoted by the various
-     * {@link PaymentTransactionType}s. In almost all scenarios (as in, 99.9999% of all cases) there will be a at least one
-     * {@link PaymentTransaction} for every {@link OrderPayment}.</p>
-     *
-     * <p>To add a transaction to an {@link OrderPayment} see {@link #addTransaction(PaymentTransaction)}.</p>
-     *
-     * @see {@link #addTransaction(PaymentTransaction)}
-     * @return PaymentTransaction[]
-     */
- /*   public function getTransactions()
-    {
-
-    }*/
-
-    /**
-     * <p>All of the transactions that have been applied to this particular payment. Transactions are denoted by the various
-     * {@link PaymentTransactionType}s. In almost all scenarios (as in, 99.9999% of all cases) there will be a at least one
-     * {@link PaymentTransaction} for every {@link OrderPayment}.</p>
-     *
-     * <p>To add a transaction to an {@link OrderPayment} see {@link #addTransaction(PaymentTransaction)}.</p>
-     *
-     * @see {@link #addTransaction(PaymentTransaction)}
-     * @param PaymentTransaction
-     */
-   /* public function setTransactions($details)
-    {
-
-    }*/
-
-    /**
-     * A more declarative way to invoke {@link #getTransactions().add()}. This is the preferred way to add a transaction
-     * to this payment.
-     */
-   /* public function addTransaction(PaymentTransaction $transaction)
-    {
-
-    }*/
 
     /**
      * Returns a transaction for given <b>type</b>. This is useful when validating whether or not a {@link PaymentTransaction}

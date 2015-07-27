@@ -27,6 +27,7 @@ PHPCommerce\Payment\Entity\PaymentTransaction:
 
     order_payment:
       targetEntity: PHPCommerce\Payment\Entity\OrderPayment
+      inversedBy: transactions
       joinColumn:
         name: order_payment
         referencedColumnName: id

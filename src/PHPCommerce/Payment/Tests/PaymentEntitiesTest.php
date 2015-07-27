@@ -3,6 +3,7 @@ namespace PHPCommerce\Payment\Tests;
 
 use Doctrine\Common\Persistence\ObjectRepository;
 use PHPCommerce\Payment\Entity\OrderPayment;
+use PHPCommerce\Payment\Entity\PaymentTransaction;
 use PHPCommerce\Payment\PaymentType;
 use PHPCommerce\Payment\PaymentGatewayType;
 use PHPUnit_Framework_TestCase;
@@ -26,7 +27,6 @@ class PaymentEntitiesTest extends AbstractDoctrineTest
     public function testOrderPayment()
     {
         $order = new Order();
-        $this->em->persist($order);
 
         $orderpayment = new OrderPayment();
         $orderpayment->setOrder($order);
@@ -60,7 +60,6 @@ class PaymentEntitiesTest extends AbstractDoctrineTest
 
     public function testPaymentType() {
         $order = new Order();
-        $this->em->persist($order);
 
         $orderpayment = new OrderPayment();
         $orderpayment->setOrder($order);
@@ -78,14 +77,40 @@ class PaymentEntitiesTest extends AbstractDoctrineTest
 
         $this->em->flush();
 
-        $orderRepository = $this->em->getRepository('PHPCommerce\Payment\Entity\OrderPayment');
-        $orderPayment = $orderRepository->findOneBy(['type' => PaymentType::$BANK_ACCOUNT]);
+        $orderPaymentRepository = $this->em->getRepository('PHPCommerce\Payment\Entity\OrderPayment');
+        $orderPayment = $orderPaymentRepository->findOneBy(['type' => PaymentType::$BANK_ACCOUNT]);
 
         $this->assertNotNull($orderPayment);
         $this->assertTrue(PaymentType::$BANK_ACCOUNT->equals($orderPayment->getType()));
 
-        $orderPayment = $orderRepository->findOneBy(['type' => PaymentType::$COD]);
+        $orderPayment = $orderPaymentRepository->findOneBy(['type' => PaymentType::$COD]);
         $this->assertNull($orderPayment);
+    }
+
+    public function testTransactions() {
+        $order = new Order();
+
+        $orderpayment = new OrderPayment();
+        $orderpayment->setOrder($order);
+        $orderpayment->setType(PaymentType::$BANK_ACCOUNT);
+        $orderpayment->setGatewayType(PaymentGatewayType::$TEMPORARY);
+
+        $trx = new PaymentTransaction();
+        $orderpayment->addTransaction($trx);
+
+        $trx2 = new PaymentTransaction();
+        $orderpayment->addTransaction($trx2);
+
+        $this->em->persist($orderpayment);
+
+        $this->em->flush();
+
+        $orderPaymentRepository = $this->em->getRepository('PHPCommerce\Payment\Entity\OrderPayment');
+
+        $orderPayments = $orderPaymentRepository->findAll();
+        $this->assertCount(1, $orderPayments);
+
+        $this->assertCount(2, $orderPayments[0]->getTransactions());
     }
 }
 
