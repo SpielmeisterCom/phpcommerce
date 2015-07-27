@@ -7,6 +7,12 @@ PHPCommerce\Payment\Entity\OrderPayment:
       type: integer
       generator: { strategy: AUTO }
 
+  fields:
+    type:
+      type: payment_type
+      type: string
+      length: 255
+
   manyToOne:
     order:
       targetEntity: PHPCommerce\ERP\Entity\Order

@@ -1,6 +1,8 @@
 <?php
 namespace PHPCommerce\Payment\Entity;
 use PHPCommerce\ERP\Entity\Order;
+use PHPCommerce\Payment\PaymentGatewayType;
+use PHPCommerce\Payment\PaymentType;
 
 /**
  * <p>This entity is designed to deal with payments associated to an {@link Order} and is <i>usually</i> unique for a particular
@@ -27,7 +29,17 @@ class OrderPayment {
     /**
      * @var Order
      */
-    private $order;
+    protected $order;
+
+    /**
+     * @var PaymentType
+     */
+    protected $type;
+
+    /**
+     * @var PaymentGatewayType
+     */
+    protected $gateway_type;
 
     public function getId()
     {
@@ -57,24 +69,49 @@ class OrderPayment {
         $order->addPayment($this);
     }
 
-    /**
-     * Gets the billing address associated with this payment. This might be null for some payments where no billing address
-     * is required (like gift cards or account credit)
-     * @return Address
-     */
-    public function getBillingAddress()
-    {
 
+    /**
+     * The type of this payment like Credit Card or Gift Card.
+     *
+     * @see {@link PaymentType}
+     * @return PaymentType
+     */
+     public function getType()
+     {
+        return $this->type;
+     }
+
+    /**
+     * Sets the type of this payment like Credit Card or Gift Card
+     *
+     * @see {@link PaymentType}
+     */
+    public function setType(PaymentType $type)
+    {
+        $this->type = $type;
     }
 
     /**
-     * Sets the billing address associated with this payment. This might be null for some payments where no billing address
-     * is required (like gift cards or account credit)
+     * Gets the gateway that was used to process this order payment. Only a SINGLE payment gateway can modify transactions
+     * on a particular order payment.
+     * @return PaymentGatewayType
      */
-    public function setBillingAddress(Address $billingAddress)
+    public function getGatewayType()
     {
-
+        return $this->gateway_type;
     }
+
+    /**
+     * <p>Gets the gateway that was used to process this order payment. Only a SINGLE payment gateway can modify transactions
+     * on a particular order payment.</p>
+     *
+     * <p>It usually does not make sense to modify the gateway type after it has already been set once. Instead, consider
+     * just archiving this payment type (by deleting it) and creating a new payment for the new gateway.</p>
+     */
+     public function setGatewayType(PaymentGatewayType $gatewayType)
+     {
+        $this->gateway_type = $gatewayType;
+     }
 
     /**
      * The amount that this payment is allotted for. The summation of all of the {@link OrderPayment}s for a particular
@@ -114,48 +151,6 @@ class OrderPayment {
 
     }*/
 
-    /**
-     * The type of this payment like Credit Card or Gift Card.
-     *
-     * @see {@link PaymentType}
-     * @return PaymentType
-     */
-   /* public function getType()
-    {
-
-    }*/
-
-    /**
-     * Sets the type of this payment like Credit Card or Gift Card
-     *
-     * @see {@link PaymentType}
-     */
-    /*public function setType(PaymentType $type)
-    {
-
-    }*/
-
-    /**
-     * Gets the gateway that was used to process this order payment. Only a SINGLE payment gateway can modify transactions
-     * on a particular order payment.
-     * @return PaymentGatewayType
-     */
-    /*public function getGatewayType()
-    {
-
-    }*/
-
-    /**
-     * <p>Gets the gateway that was used to process this order payment. Only a SINGLE payment gateway can modify transactions
-     * on a particular order payment.</p>
-     *
-     * <p>It usually does not make sense to modify the gateway type after it has already been set once. Instead, consider
-     * just archiving this payment type (by deleting it) and creating a new payment for the new gateway.</p>
-     */
-   /* public function setPaymentGatewayType(PaymentGatewayType $gatewayType)
-    {
-
-    }*/
 
     /**
      * <p>All of the transactions that have been applied to this particular payment. Transactions are denoted by the various
