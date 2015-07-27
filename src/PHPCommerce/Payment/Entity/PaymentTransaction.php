@@ -1,6 +1,9 @@
 <?php
 namespace PHPCommerce\Payment\Entity;
 
+use DateTime;
+use PHPCommerce\Payment\PaymentTransactionType;
+
 class PaymentTransaction /* extends Serializable, Status, AdditionalFields */ {
     /**
      * <p>Used to store individual transactions about a particular payment. While an {@link OrderPayment} holds data like what the
@@ -35,6 +38,11 @@ class PaymentTransaction /* extends Serializable, Status, AdditionalFields */ {
     protected $customer_ip_address;
 
     /**
+     * @var PaymentTransactionType
+     */
+    protected $type;
+
+    /**
      * @var PaymentTransaction
      */
     protected $parent_transaction;
@@ -48,8 +56,13 @@ class PaymentTransaction /* extends Serializable, Status, AdditionalFields */ {
         return $this->id;
     }
 
+    /**
+     * @param $id
+     * @return PaymentTransaction
+     */
     public function setId($id) {
         $this->id = $id;
+        return $this;
     }
 
     /**
@@ -65,9 +78,11 @@ class PaymentTransaction /* extends Serializable, Status, AdditionalFields */ {
 
     /**
      * Sets the overall payment that this transaction applies to
+     * @return PaymentTransaction
      */
     public function setOrderPayment(OrderPayment $payment) {
         $this->order_payment = $payment;
+        return $this;
     }
 
     /**
@@ -89,8 +104,13 @@ class PaymentTransaction /* extends Serializable, Status, AdditionalFields */ {
         return $this->parent_transaction;
     }
 
+    /**
+     * @param PaymentTransaction $parentTransaction
+     * @return PaymentTransaction
+     */
     public function setParentTransaction(PaymentTransaction $parentTransaction) {
         $this->parent_transaction = $parentTransaction;
+        return $this;
     }
 
     /**
@@ -98,11 +118,16 @@ class PaymentTransaction /* extends Serializable, Status, AdditionalFields */ {
      * @return PaymentTransactionType
      */
     public function getType() {
-
+        return $this->type;
     }
 
+    /**
+     * @param PaymentTransactionType $type
+     * @return PaymentTransaction
+     */
     public function setType(PaymentTransactionType $type) {
-
+        $this->type = $type;
+        return $this;
     }
 
     /**
@@ -130,9 +155,12 @@ class PaymentTransaction /* extends Serializable, Status, AdditionalFields */ {
 
     /**
      * Sets the date that this transaction was made on
+     * @param DateTime $date
+     * @return PaymentTransaction
      */
     public function setDate(DateTime $date) {
         $this->date = $date;
+        return $this;
     }
 
     /**
@@ -144,9 +172,11 @@ class PaymentTransaction /* extends Serializable, Status, AdditionalFields */ {
 
     /**
      * Sets the {@link Customer} IP address that instigated the transaction. This is an optional field.
+     * @return PaymentTransaction
      */
     public function setCustomerIpAddress($customerIpAddress) {
         $this->customer_ip_address = $customerIpAddress;
+        return $this;
     }
 
     /**
@@ -159,9 +189,11 @@ class PaymentTransaction /* extends Serializable, Status, AdditionalFields */ {
 
     /**
      * Sets the raw response that was returned from the gateway.
+     * @return PaymentTransaction
      */
     public function setRawResponse($rawResponse) {
 
+        return $this;
     }
 
     /**

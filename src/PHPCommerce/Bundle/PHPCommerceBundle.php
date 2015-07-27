@@ -23,10 +23,15 @@ class PHPCommerceBundle extends Bundle
             Type::addType('payment_gateway_type', 'PHPCommerce\Payment\ORM\Types\PaymentGatewayType');
         }
 
+        if(!Type::hasType('payment_transaction_type')) {
+            Type::addType('payment_transaction_type', 'PHPCommerce\Payment\ORM\Types\PaymentTransactionType');
+        }
+
         $em = $this->container->get('doctrine.orm.default_entity_manager');
         $conn = $em->getConnection();
 
         $conn->getDatabasePlatform()->registerDoctrineTypeMapping('payment_type', 'payment_type');
         $conn->getDatabasePlatform()->registerDoctrineTypeMapping('payment_gateway_type', 'payment_gateway_type');
+        $conn->getDatabasePlatform()->registerDoctrineTypeMapping('payment_transaction_type', 'payment_transaction_type');
     }
 }

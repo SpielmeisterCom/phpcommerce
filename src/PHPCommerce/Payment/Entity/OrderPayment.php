@@ -3,6 +3,7 @@ namespace PHPCommerce\Payment\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use PHPCommerce\ERP\Entity\Order;
 use PHPCommerce\Payment\PaymentGatewayType;
+use PHPCommerce\Payment\PaymentTransactionType;
 use PHPCommerce\Payment\PaymentType;
 
 /**
@@ -57,9 +58,14 @@ class OrderPayment {
         return $this->id;
     }
 
+    /**
+     * @param $id
+     * @return OrderPayment
+     */
     public function setId($id)
     {
         $this->id = $id;
+        return $this;
     }
 
     /**
@@ -72,12 +78,13 @@ class OrderPayment {
 
     /**
      * @param Order $order
-     * @return mixed
+     * @return OrderPayment
      */
     public function setOrder(Order $order)
     {
         $this->order = $order;
         $order->addPayment($this);
+        return $this;
     }
 
 
@@ -96,10 +103,12 @@ class OrderPayment {
      * Sets the type of this payment like Credit Card or Gift Card
      *
      * @see {@link PaymentType}
+     * @return OrderPayment
      */
     public function setType(PaymentType $type)
     {
         $this->type = $type;
+        return $this;
     }
 
     /**
@@ -118,10 +127,13 @@ class OrderPayment {
      *
      * <p>It usually does not make sense to modify the gateway type after it has already been set once. Instead, consider
      * just archiving this payment type (by deleting it) and creating a new payment for the new gateway.</p>
+     *
+     * @return OrderPayment
      */
      public function setGatewayType(PaymentGatewayType $gatewayType)
      {
         $this->gateway_type = $gatewayType;
+        return $this;
      }
 
     /**
@@ -148,10 +160,12 @@ class OrderPayment {
      *
      * @see {@link #addTransaction(PaymentTransaction)}
      * @param PaymentTransaction
+     * @return OrderPayment
      */
      public function setTransactions($transactions)
      {
         $this->transactions = $transactions;
+        return $this;
      }
 
     /**
@@ -162,6 +176,34 @@ class OrderPayment {
      {
         $this->transactions->add($transaction);
      }
+
+    /**
+     * Returns a transaction for given <b>type</b>. This is useful when validating whether or not a {@link PaymentTransaction}
+     * can actually be added to this payment. For instance, there can only be a single {@link PaymentTransactionType#AUTHORIZE}
+     * for a payment.
+     *
+     * @param type the type of transaction to look for within {@link #getTransactions()}
+     * @return a list of transactions or an empty list if there are no transaction of that type
+     *
+     * @return PaymentTransaction[]
+     */
+    public function getTransactionsForType(PaymentTransactionType $type)
+    {
+
+    }
+
+    /**
+     * Returns the initial transaction for this order payment. This would either be an {@link PaymentTransactionType#AUTHORIZE}
+     * or {@link PaymentTransactionType#AUTHORIZE_AND_CAPTURE} or {@link PaymentTransactionType#UNCONFIRMED}.
+     * Implementation-wise this would
+     * be any PaymentTransaction whose parentTransaction is NULL.
+     *
+     * @return PaymentTransaction the initial transaction for this order payment or null if there isn't any
+     */
+    public function getInitialTransaction()
+    {
+
+    }
 
     /**
      * The amount that this payment is allotted for. The summation of all of the {@link OrderPayment}s for a particular
@@ -201,34 +243,6 @@ class OrderPayment {
 
     }*/
 
-
-    /**
-     * Returns a transaction for given <b>type</b>. This is useful when validating whether or not a {@link PaymentTransaction}
-     * can actually be added to this payment. For instance, there can only be a single {@link PaymentTransactionType#AUTHORIZE}
-     * for a payment.
-     *
-     * @param type the type of transaction to look for within {@link #getTransactions()}
-     * @return a list of transactions or an empty list if there are no transaction of that type
-     *
-     * @return PaymentTransaction[]
-     */
-    /*public function getTransactionsForType(PaymentTransactionType $type)
-    {
-
-    }*/
-
-    /**
-     * Returns the initial transaction for this order payment. This would either be an {@link PaymentTransactionType#AUTHORIZE}
-     * or {@link PaymentTransactionType#AUTHORIZE_AND_CAPTURE} or {@link PaymentTransactionType#UNCONFIRMED}.
-     * Implementation-wise this would
-     * be any PaymentTransaction whose parentTransaction is NULL.
-     *
-     * @return PaymentTransaction the initial transaction for this order payment or null if there isn't any
-     */
-    /*public function getInitialTransaction()
-    {
-
-    }*/
 
     /**
      * Looks through all of the transactions for this payment and adds up the amount for the given transaction type. This

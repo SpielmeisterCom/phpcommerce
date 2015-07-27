@@ -8,6 +8,12 @@ PHPCommerce\Payment\Entity\PaymentTransaction:
       generator: { strategy: AUTO }
 
   fields:
+    type:
+      type: payment_transaction_type
+      type: string
+      length: 255
+      nullable: false
+
     date:
       type: datetime
       column: date
@@ -28,6 +34,8 @@ PHPCommerce\Payment\Entity\PaymentTransaction:
     order_payment:
       targetEntity: PHPCommerce\Payment\Entity\OrderPayment
       inversedBy: transactions
+      cascade:
+        - persist
       joinColumn:
         name: order_payment
         referencedColumnName: id

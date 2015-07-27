@@ -18,6 +18,13 @@ PHPCommerce\Payment\Entity\OrderPayment:
       type: string
       length: 255
 
+  oneToMany:
+    transactions:
+      targetEntity: PHPCommerce\Payment\Entity\PaymentTransaction
+      mappedBy: order_payment
+      cascade:
+        - persist
+
   manyToOne:
     order:
       targetEntity: PHPCommerce\ERP\Entity\Order

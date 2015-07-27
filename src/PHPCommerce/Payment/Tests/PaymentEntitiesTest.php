@@ -1,9 +1,11 @@
 <?php
 namespace PHPCommerce\Payment\Tests;
 
+use DateTime;
 use Doctrine\Common\Persistence\ObjectRepository;
 use PHPCommerce\Payment\Entity\OrderPayment;
 use PHPCommerce\Payment\Entity\PaymentTransaction;
+use PHPCommerce\Payment\PaymentTransactionType;
 use PHPCommerce\Payment\PaymentType;
 use PHPCommerce\Payment\PaymentGatewayType;
 use PHPUnit_Framework_TestCase;
@@ -96,9 +98,21 @@ class PaymentEntitiesTest extends AbstractDoctrineTest
         $orderpayment->setGatewayType(PaymentGatewayType::$TEMPORARY);
 
         $trx = new PaymentTransaction();
+
+        $trx
+            ->setType(PaymentTransactionType::$AUTHORIZE)
+            ->setDate(new DateTime())
+            ->setCustomerIpAddress("127.0.0.1");
+
         $orderpayment->addTransaction($trx);
 
         $trx2 = new PaymentTransaction();
+
+        $trx2
+            ->setType(PaymentTransactionType::$AUTHORIZE_AND_CAPTURE)
+            ->setDate(new DateTime())
+            ->setCustomerIpAddress("127.0.0.1");
+
         $orderpayment->addTransaction($trx2);
 
         $this->em->persist($orderpayment);
@@ -111,6 +125,7 @@ class PaymentEntitiesTest extends AbstractDoctrineTest
         $this->assertCount(1, $orderPayments);
 
         $this->assertCount(2, $orderPayments[0]->getTransactions());
+
     }
 }
 
