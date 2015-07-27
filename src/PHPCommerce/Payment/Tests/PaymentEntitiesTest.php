@@ -4,6 +4,7 @@ namespace PHPCommerce\Payment\Tests;
 use Doctrine\Common\Persistence\ObjectRepository;
 use PHPCommerce\Payment\Entity\OrderPayment;
 use PHPCommerce\Payment\PaymentType;
+use PHPCommerce\Payment\PaymentGatewayType;
 use PHPUnit_Framework_TestCase;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\Console\Input\ArrayInput;
@@ -30,12 +31,14 @@ class PaymentEntitiesTest extends AbstractDoctrineTest
         $orderpayment = new OrderPayment();
         $orderpayment->setOrder($order);
         $orderpayment->setType(PaymentType::$BANK_ACCOUNT);
+        $orderpayment->setGatewayType(PaymentGatewayType::$TEMPORARY);
 
         $this->em->persist($orderpayment);
 
         $orderpayment2 = new OrderPayment();
         $orderpayment2->setOrder($order);
         $orderpayment2->setType(PaymentType::$CREDIT_CARD);
+        $orderpayment2->setGatewayType(PaymentGatewayType::$TEMPORARY);
 
         $this->em->persist($orderpayment2);
 
@@ -62,12 +65,14 @@ class PaymentEntitiesTest extends AbstractDoctrineTest
         $orderpayment = new OrderPayment();
         $orderpayment->setOrder($order);
         $orderpayment->setType(PaymentType::$BANK_ACCOUNT);
+        $orderpayment->setGatewayType(PaymentGatewayType::$TEMPORARY);
 
         $this->em->persist($orderpayment);
 
         $orderpayment2 = new OrderPayment();
         $orderpayment2->setOrder($order);
         $orderpayment2->setType(PaymentType::$CREDIT_CARD);
+        $orderpayment2->setGatewayType(PaymentGatewayType::$TEMPORARY);
 
         $this->em->persist($orderpayment2);
 

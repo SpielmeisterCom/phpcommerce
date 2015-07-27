@@ -13,6 +13,11 @@ PHPCommerce\Payment\Entity\OrderPayment:
       type: string
       length: 255
 
+    gateway_type:
+      type: payment_gateway_type
+      type: string
+      length: 255
+
   manyToOne:
     order:
       targetEntity: PHPCommerce\ERP\Entity\Order
