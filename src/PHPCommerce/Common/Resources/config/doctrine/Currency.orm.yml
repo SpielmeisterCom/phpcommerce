@@ -1,0 +1,20 @@
+PHPCommerce\Payment\Entity\OrderPayment:
+  type: entity
+  table: currency
+
+  id:
+    currencyCode:
+      type: string
+      length: 3
+      column: currency_code
+
+  fields:
+    friendlyName:
+      type: string
+      length: 255
+      column: friendly_name
+
+    defaultFlag:
+      type: boolean
+      column: default_flag
+

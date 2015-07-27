@@ -6,6 +6,7 @@ imports:
     - { resource: "bundles/doctrine_orm.yml" }
     - { resource: "bundles/doctrine_cache.yml" }
 
+    - { resource: "../../../Common/Resources/config/config.yml" }
     - { resource: "../../../Payment/Resources/config/config.yml" }
     - { resource: "../../../ERP/Resources/config/config.yml" }
 
