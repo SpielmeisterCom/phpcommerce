@@ -1,5 +1,5 @@
 <?php
-namespace PHPCommerce\Common\Currency\Entity;
+namespace PHPCommerce\Common\Entity;
 
 class Currency
 {
