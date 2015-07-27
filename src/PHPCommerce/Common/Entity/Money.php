@@ -1,8 +1,6 @@
 <?php
 namespace PHPCommerce\Common\Money;
 
-use PHPCommerce\Common\Currency\Entity\Currency;
-
 class Money {
     protected $amount;
 
