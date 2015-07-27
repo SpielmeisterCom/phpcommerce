@@ -10,6 +10,44 @@ class Money {
      * @var Currency
      */
     protected $currency;
+
+    /**
+     * @return mixed
+     */
+    public function getAmount()
+    {
+        return $this->amount;
+    }
+
+    /**
+     * @param mixed $amount
+     * @return Money
+     */
+    public function setAmount($amount)
+    {
+        $this->amount = $amount;
+        return $this;
+    }
+
+    /**
+     * @return Currency
+     */
+    public function getCurrency()
+    {
+        return $this->currency;
+    }
+
+    /**
+     * @param Currency $currency
+     * @return Money
+     */
+    public function setCurrency(Currency $currency)
+    {
+        $this->currency = $currency;
+        return $this;
+    }
+
+
 }
 
 //
