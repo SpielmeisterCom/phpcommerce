@@ -3,6 +3,7 @@ imports:
     - { resource: "bundles/framework.yml" }
     - { resource: "bundles/twig.yml" }
     - { resource: "bundles/doctrine.yml" }
+    - { resource: "bundles/doctrine_migrations.yml" }
     - { resource: "bundles/doctrine_orm.yml" }
     - { resource: "bundles/doctrine_cache.yml" }
 

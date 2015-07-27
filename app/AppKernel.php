@@ -7,6 +7,7 @@ class AppKernel extends Kernel
     public function registerBundles()
     {
         return array(
+            new Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
             new Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new PHPCommerce\Bundle\PHPCommerceBundle()
