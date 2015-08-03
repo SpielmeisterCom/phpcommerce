@@ -18,6 +18,9 @@ class Version20150803112129 extends AbstractMigration
         $this->addSql('CREATE TABLE currency (code VARCHAR(3) NOT NULL, name VARCHAR(255) NOT NULL, symbol VARCHAR(1) NOT NULL, `default` TINYINT(1) NOT NULL, PRIMARY KEY(code)) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB');
         $this->addSql('INSERT INTO currency (code, name, symbol, `default`) VALUES ("EUR", "Euro", "€", true)');
         $this->addSql('INSERT INTO currency (code, name, symbol, `default`) VALUES ("USD", "Dollar", "$", false)');
+
+        $this->addSql('CREATE TABLE IF NOT EXISTS `order` (id INT AUTO_INCREMENT NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB');
+
     }
 
     /**
@@ -29,5 +32,6 @@ class Version20150803112129 extends AbstractMigration
         $this->abortIf($this->connection->getDatabasePlatform()->getName() != 'mysql', 'Migration can only be executed safely on \'mysql\'.');
 
         $this->addSql("DROP TABLE currency");
+        $this->addSql('DROP TABLE `order`');
     }
 }
