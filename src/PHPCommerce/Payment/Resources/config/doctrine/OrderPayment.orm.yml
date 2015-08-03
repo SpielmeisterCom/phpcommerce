@@ -19,10 +19,11 @@ PHPCommerce\Payment\Entity\OrderPayment:
       length: 255
       column: gateway_type
 
-    referenceNumber:
+    reference:
       type: string
       length: 255
-      column: reference_number
+      column: reference
+      nullable: true
 
   oneToMany:
     transactions:

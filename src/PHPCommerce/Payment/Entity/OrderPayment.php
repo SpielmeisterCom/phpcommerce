@@ -48,7 +48,7 @@ class OrderPayment {
      */
     protected $transactions;
 
-    protected $referenceNumber;
+    protected $reference;
 
     public function __construct()
     {
@@ -213,18 +213,18 @@ class OrderPayment {
      * attempting to store credit cards in your own database (which is the usual, recommended case) then this will not be
      * used or set. If you do use this reference number, this can be anything that is unique (like System.currentTimeMillis()).
      */
-    public function getReferenceNumber()
+    public function getReference()
     {
-        return $this->referenceNumber;
+        return $this->reference;
     }
 
     /**
      * Sets the soft link to a {@link Referenced} entity stored in the blSecurePU persistence unit. This will likely not
      * be used as the common case is to not store credit cards yourself.
      */
-    public function setReferenceNumber($referenceNumber)
+    public function setReference($reference)
     {
-        $this->referenceNumber = $referenceNumber;
+        $this->reference = $reference;
         return $this;
     }
 
