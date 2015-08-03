@@ -3,18 +3,22 @@ PHPCommerce\Common\Entity\Currency:
   table: currency
 
   id:
-    currencyCode:
+    code:
       type: string
       length: 3
-      column: currency_code
+      column: code
 
   fields:
-    friendlyName:
+    name:
       type: string
       length: 255
-      column: friendly_name
+      column: name
 
-    defaultFlag:
+    symbol:
+      type: string
+      length: 1
+      column: symbol
+
+    default:
       type: boolean
-      column: default_flag
-
+      column: default

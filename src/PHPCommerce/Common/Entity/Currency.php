@@ -3,57 +3,95 @@ namespace PHPCommerce\Common\Entity;
 
 class Currency
 {
-    protected $currencyCode;
+    /**
+     * Three letter currency code
+     * @var string
+     */
+    protected $code;
 
-    protected $friendlyName;
+    /**
+     * @var string
+     */
+    protected $name;
 
-    protected $defaultFlag;
+    /**
+     * 1 char symbol of this currency
+     * @var string
+     */
+    protected $symbol;
+
+    /**
+     * Specifies if this is the default currency
+     * @var string
+     */
+    protected $default;
 
     /**
      * @return mixed
      */
-    public function getCurrencyCode()
+    public function getCode()
     {
-        return $this->currencyCode;
+        return $this->code;
     }
 
     /**
      * @param mixed $code
      */
-    public function setCurrencyCode($currencyCode)
+    public function setCode($code)
     {
-        $this->currencyCode = $currencyCode;
+        $this->code = $code;
     }
 
     /**
      * @return mixed
      */
-    public function getFriendlyName()
+    public function getName()
     {
-        return $this->friendlyName;
+        return $this->name;
     }
 
     /**
-     * @param mixed $friendlyName
+     * @param mixed $name
      */
-    public function setFriendlyName($friendlyName)
+    public function setName($name)
     {
-        $this->friendlyName = $friendlyName;
+        $this->name = $name;
     }
 
     /**
      * @return mixed
      */
-    public function getDefaultFlag()
+    public function getDefault()
     {
-        return $this->defaultFlag;
+        return $this->default;
+    }
+
+    public function isDefault()
+    {
+        return ($this->default);
     }
 
     /**
-     * @param mixed $defaultFlag
+     * @param mixed $default
      */
-    public function setDefaultFlag($defaultFlag)
+    public function setDefault($default)
     {
-        $this->defaultFlag = $defaultFlag;
+        $this->default = $default;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSymbol()
+    {
+        return $this->symbol;
+    }
+
+    /**
+     * @param mixed $symbol
+     */
+    public function setSymbol($symbol)
+    {
+        $this->symbol = $symbol;
     }
 }
