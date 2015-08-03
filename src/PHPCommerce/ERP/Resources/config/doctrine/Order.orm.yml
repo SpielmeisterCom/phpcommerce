@@ -9,7 +9,7 @@ PHPCommerce\ERP\Entity\Order:
 
   oneToMany:
     payments:
-      targetEntity: PHPCommerce\Payment\Entity\OrderPayment
+      targetEntity: PHPCommerce\Payment\Entity\Payment
       mappedBy: order
       cascade:
         - persist

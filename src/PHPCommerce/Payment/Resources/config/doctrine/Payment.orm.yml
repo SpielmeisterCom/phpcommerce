@@ -1,4 +1,4 @@
-PHPCommerce\Payment\Entity\OrderPayment:
+PHPCommerce\Payment\Entity\Payment:
   type: entity
   table: order_payment
 

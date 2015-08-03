@@ -2,6 +2,8 @@
 namespace PHPCommerce\Common\Money;
 
 class Money {
+    public static $ZERO;
+
     protected $amount;
 
     /**
@@ -45,26 +47,21 @@ class Money {
         return $this;
     }
 
-
-}
-
-//
-//@XmlAccessorType(XmlAccessType.FIELD)
-//public class Money implements Serializable, Cloneable, Comparable<Money>, Externalizable {
-//
-//    private static final long serialVersionUID = 1L;
-
-//
-//    public static final Money ZERO = new Money(BigDecimal.ZERO);
-//
-//    protected static String getCurrencyCode(BroadleafCurrency blCurrency) {
+    //    protected static String getCurrencyCode(BroadleafCurrency blCurrency) {
 //        if (blCurrency != null) {
 //            return blCurrency.getCurrencyCode();
 //        } else {
 //            return defaultCurrency().getCurrencyCode();
 //        }
 //    }
-//
+
+
+
+}
+
+Money::$ZERO = new Money("GIFT_CARD", "Gift Card");
+
+
 //    public Money(Currency currency) {
 //        this(BankersRounding.zeroAmount(), currency);
 //    }
@@ -459,18 +456,3 @@ class Money {
 //        return Currency.getInstance("USD");
 //    }
 //
-//    @Override
-//    public void readExternal(ObjectInput in) throws IOException,ClassNotFoundException {
-//        // Read in the server properties from the client representation.
-//        amount = new BigDecimal( in.readFloat());
-//
-//    }
-//
-//    @Override
-//    public void writeExternal(ObjectOutput out) throws IOException {
-//        // Write out the client properties from the server representation.
-//        out.writeFloat(amount.floatValue());
-//        // out.writeObject(currency);
-//    }
-//
-//}

@@ -2,7 +2,7 @@
 namespace PHPCommerce\Bundle\Tests;
 
 use Doctrine\Common\Persistence\ObjectRepository;
-use PHPCommerce\Payment\Entity\OrderPayment;
+use PHPCommerce\Payment\Entity\Payment;
 use PHPUnit_Framework_TestCase;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\Console\Input\ArrayInput;

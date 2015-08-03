@@ -25,7 +25,7 @@ use PHPCommerce\Payment\PaymentType;
  * @see {@link PaymentType}
  * @author Phillip Verheyden (phillipuniverse)
  */
-class OrderPayment {
+class Payment {
     protected $id;
 
     /**

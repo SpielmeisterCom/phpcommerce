@@ -50,7 +50,7 @@ class PaymentTransaction /* extends Serializable, Status, AdditionalFields */ {
     /**
      * @var OrderPayment
      */
-    protected $order_payment;
+    protected $payment;
 
     public function getId() {
         return $this->id;
@@ -72,16 +72,16 @@ class PaymentTransaction /* extends Serializable, Status, AdditionalFields */ {
      *
      * @return OrderPayment
      */
-    public function getOrderPayment() {
-        return $this->order_payment;
+    public function getPayment() {
+        return $this->payment;
     }
 
     /**
      * Sets the overall payment that this transaction applies to
      * @return PaymentTransaction
      */
-    public function setOrderPayment(OrderPayment $payment) {
-        $this->order_payment = $payment;
+    public function setPayment(Payment $payment) {
+        $this->payment = $payment;
         return $this;
     }
 

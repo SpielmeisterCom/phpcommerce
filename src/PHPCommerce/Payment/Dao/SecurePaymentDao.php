@@ -1,7 +1,7 @@
 <?php
 namespace PHPCommerce\Payment\Dao;
 
-interface SecureOrderPaymentDao {
+interface SecurePaymentDao {
 
     /**
      * @return BankAccountPayment

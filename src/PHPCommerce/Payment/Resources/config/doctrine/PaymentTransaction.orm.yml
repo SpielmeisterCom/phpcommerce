@@ -31,8 +31,8 @@ PHPCommerce\Payment\Entity\PaymentTransaction:
         name: parent_transaction
         referencedColumnName: id
 
-    order_payment:
-      targetEntity: PHPCommerce\Payment\Entity\OrderPayment
+    payment:
+      targetEntity: PHPCommerce\Payment\Entity\Payment
       inversedBy: transactions
       cascade:
         - persist

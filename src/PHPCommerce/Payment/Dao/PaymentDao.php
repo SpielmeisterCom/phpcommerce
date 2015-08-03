@@ -1,7 +1,7 @@
 <?php
 namespace PHPCommerce\Payment\Dao;
 
-interface OrderPaymentDao {
+interface PaymentDao {
     /**
      * @param $paymentId
      * @return OrderPayment
@@ -11,7 +11,7 @@ interface OrderPaymentDao {
     /**
      * @return OrderPayment
      */
-    public function saveOrderPayment(OrderPayment $payment);
+    public function savePayment(Payment $payment);
 
     /**
      * @param PaymentTransaction $
@@ -36,7 +36,7 @@ interface OrderPaymentDao {
      */
     public function create();
 
-    public function delete(OrderPayment $payment);
+    public function delete(Payment $payment);
 
     /**
      * @return PaymentTransaction

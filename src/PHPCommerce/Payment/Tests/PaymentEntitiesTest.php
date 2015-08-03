@@ -3,7 +3,7 @@ namespace PHPCommerce\Payment\Tests;
 
 use DateTime;
 use Doctrine\Common\Persistence\ObjectRepository;
-use PHPCommerce\Payment\Entity\OrderPayment;
+use PHPCommerce\Payment\Entity\Payment;
 use PHPCommerce\Payment\Entity\PaymentTransaction;
 use PHPCommerce\Payment\PaymentTransactionType;
 use PHPCommerce\Payment\PaymentType;
@@ -26,28 +26,28 @@ use PHPCommerce\ERP\Entity\Order;
 
 class PaymentEntitiesTest extends AbstractDoctrineTest
 {
-    public function testOrderPayment()
+    public function testPayment()
     {
         $order = new Order();
 
-        $orderpayment = new OrderPayment();
-        $orderpayment->setOrder($order);
-        $orderpayment->setType(PaymentType::$BANK_ACCOUNT);
-        $orderpayment->setGatewayType(PaymentGatewayType::$TEMPORARY);
+        $payment = new Payment();
+        $payment->setOrder($order);
+        $payment->setType(PaymentType::$BANK_ACCOUNT);
+        $payment->setGatewayType(PaymentGatewayType::$TEMPORARY);
 
-        $this->em->persist($orderpayment);
+        $this->em->persist($payment);
 
-        $orderpayment2 = new OrderPayment();
-        $orderpayment2->setOrder($order);
-        $orderpayment2->setType(PaymentType::$CREDIT_CARD);
-        $orderpayment2->setGatewayType(PaymentGatewayType::$TEMPORARY);
+        $payment2 = new Payment();
+        $payment2->setOrder($order);
+        $payment2->setType(PaymentType::$CREDIT_CARD);
+        $payment2->setGatewayType(PaymentGatewayType::$TEMPORARY);
 
-        $this->em->persist($orderpayment2);
+        $this->em->persist($payment2);
 
         $this->em->flush();
 
         /** @var ObjectRepository  $orderpaymentRepository */
-        $orderpaymentRepository = $this->em->getRepository('PHPCommerce\Payment\Entity\OrderPayment');
+        $orderpaymentRepository = $this->em->getRepository('PHPCommerce\Payment\Entity\Payment');
         $orderpayments = $orderpaymentRepository->findAll();
 
         $this->assertCount(2, $orderpayments);
@@ -63,14 +63,14 @@ class PaymentEntitiesTest extends AbstractDoctrineTest
     public function testPaymentType() {
         $order = new Order();
 
-        $orderpayment = new OrderPayment();
+        $orderpayment = new Payment();
         $orderpayment->setOrder($order);
         $orderpayment->setType(PaymentType::$BANK_ACCOUNT);
         $orderpayment->setGatewayType(PaymentGatewayType::$TEMPORARY);
 
         $this->em->persist($orderpayment);
 
-        $orderpayment2 = new OrderPayment();
+        $orderpayment2 = new Payment();
         $orderpayment2->setOrder($order);
         $orderpayment2->setType(PaymentType::$CREDIT_CARD);
         $orderpayment2->setGatewayType(PaymentGatewayType::$TEMPORARY);
@@ -79,7 +79,7 @@ class PaymentEntitiesTest extends AbstractDoctrineTest
 
         $this->em->flush();
 
-        $orderPaymentRepository = $this->em->getRepository('PHPCommerce\Payment\Entity\OrderPayment');
+        $orderPaymentRepository = $this->em->getRepository('PHPCommerce\Payment\Entity\Payment');
         $orderPayment = $orderPaymentRepository->findOneBy(['type' => PaymentType::$BANK_ACCOUNT]);
 
         $this->assertNotNull($orderPayment);
@@ -92,7 +92,7 @@ class PaymentEntitiesTest extends AbstractDoctrineTest
     public function testTransactions() {
         $order = new Order();
 
-        $orderpayment = new OrderPayment();
+        $orderpayment = new Payment();
         $orderpayment->setOrder($order);
         $orderpayment->setType(PaymentType::$BANK_ACCOUNT);
         $orderpayment->setGatewayType(PaymentGatewayType::$TEMPORARY);
@@ -119,7 +119,7 @@ class PaymentEntitiesTest extends AbstractDoctrineTest
 
         $this->em->flush();
 
-        $orderPaymentRepository = $this->em->getRepository('PHPCommerce\Payment\Entity\OrderPayment');
+        $orderPaymentRepository = $this->em->getRepository('PHPCommerce\Payment\Entity\Payment');
 
         $orderPayments = $orderPaymentRepository->findAll();
         $this->assertCount(1, $orderPayments);

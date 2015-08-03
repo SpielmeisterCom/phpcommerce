@@ -2,7 +2,7 @@
 namespace PHPCommerce\ERP\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
-use PHPCommerce\Payment\Entity\OrderPayment;
+use PHPCommerce\Payment\Entity\Payment;
 
 class Order {
     protected $id;
@@ -32,9 +32,9 @@ class Order {
         $this->id = $id;
     }
 
-    public function addPayment(OrderPayment $orderPayment)
+    public function addPayment(Payment $payment)
     {
-        $this->payments->add($orderPayment);
+        $this->payments->add($payment);
     }
 
     /**
