@@ -10,13 +10,19 @@ PHPCommerce\Payment\Entity\OrderPayment:
   fields:
     type:
       type: payment_type
-      type: string
       length: 255
+      column: type
 
-    gateway_type:
+    gatewayType:
       type: payment_gateway_type
       type: string
       length: 255
+      column: gateway_type
+
+    referenceNumber:
+      type: string
+      length: 255
+      column: reference_number
 
   oneToMany:
     transactions:

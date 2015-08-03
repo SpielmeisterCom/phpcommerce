@@ -41,12 +41,14 @@ class OrderPayment {
     /**
      * @var PaymentGatewayType
      */
-    protected $gateway_type;
+    protected $gatewayType;
 
     /**
      * @var PaymentTransaction[]
      */
     protected $transactions;
+
+    protected $referenceNumber;
 
     public function __construct()
     {
@@ -118,7 +120,7 @@ class OrderPayment {
      */
     public function getGatewayType()
     {
-        return $this->gateway_type;
+        return $this->gatewayType;
     }
 
     /**
@@ -132,7 +134,7 @@ class OrderPayment {
      */
      public function setGatewayType(PaymentGatewayType $gatewayType)
      {
-        $this->gateway_type = $gatewayType;
+        $this->gatewayType = $gatewayType;
         return $this;
      }
 
@@ -205,6 +207,27 @@ class OrderPayment {
 
     }
 
+
+    /**
+     * The soft link to a {@link Referenced} entity which will be stored in the blSecurePU persistence unit. If you are not
+     * attempting to store credit cards in your own database (which is the usual, recommended case) then this will not be
+     * used or set. If you do use this reference number, this can be anything that is unique (like System.currentTimeMillis()).
+     */
+    public function getReferenceNumber()
+    {
+        return $this->referenceNumber;
+    }
+
+    /**
+     * Sets the soft link to a {@link Referenced} entity stored in the blSecurePU persistence unit. This will likely not
+     * be used as the common case is to not store credit cards yourself.
+     */
+    public function setReferenceNumber($referenceNumber)
+    {
+        $this->referenceNumber = $referenceNumber;
+        return $this;
+    }
+
     /**
      * The amount that this payment is allotted for. The summation of all of the {@link OrderPayment}s for a particular
      * {@link Order} should equal {@link Order#getTotal()}
@@ -220,25 +243,6 @@ class OrderPayment {
      * {@link Order} should equal {@link Order#getTotal()}
      */
   /*  public function setAmount(Money $amount)
-    {
-
-    }*/
-
-    /**
-     * The soft link to a {@link Referenced} entity which will be stored in the blSecurePU persistence unit. If you are not
-     * attempting to store credit cards in your own database (which is the usual, recommended case) then this will not be
-     * used or set. If you do use this reference number, this can be anything that is unique (like System.currentTimeMillis()).
-     */
-    /*public function getReferenceNumber()
-    {
-
-    }*/
-
-    /**
-     * Sets the soft link to a {@link Referenced} entity stored in the blSecurePU persistence unit. This will likely not
-     * be used as the common case is to not store credit cards yourself.
-     */
-    /*public function setReferenceNumber($referenceNumber)
     {
 
     }*/
