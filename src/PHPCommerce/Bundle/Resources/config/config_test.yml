@@ -1,2 +1,11 @@
 imports:
     - { resource: config_dev.yml }
+
+parameters:
+    database_driver: pdo_sqlite
+    database_path: %kernel.cache_dir%/test.db
+    database_host: null
+    database_port: null
+    database_name: null
+    database_user: null
+    database_password: null
