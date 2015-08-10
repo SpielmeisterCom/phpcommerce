@@ -20,3 +20,16 @@ Add to your `AppKernel.php`:
         
    }    
 ```
+
+Add to your `parameters.yml`:
+
+```yaml
+parameters:
+    php_commerce.database.driver: pdo_mysql
+    php_commerce.database.host: 127.0.0.1
+    php_commerce.database.port: 3306
+    php_commerce.database.name: phpcommerce
+    php_commerce.database.user: root
+    php_commerce.database.password: root
+
+```

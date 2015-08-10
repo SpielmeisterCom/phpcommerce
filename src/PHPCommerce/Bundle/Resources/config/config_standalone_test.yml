@@ -5,10 +5,5 @@ parameters:
     php_commerce.root_dir: %kernel.root_dir%/..
 
     php_commerce.database.driver: pdo_sqlite
-    php_commerce.database.host: null
-    php_commerce.database.port: null
-    php_commerce.database.name: null
-    php_commerce.database.user: null
-    php_commerce.database.password: null
     php_commerce.database.path: %kernel.cache_dir%/test.db
 

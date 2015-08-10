@@ -15,6 +15,5 @@ parameters:
     php_commerce.database.name: phpcommerce
     php_commerce.database.user: root
     php_commerce.database.password:
-    php_commerce.database.path: null
 
 

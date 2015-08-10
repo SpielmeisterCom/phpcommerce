@@ -4,13 +4,13 @@ parameters:
     php_commerce.secret: 59cd82f0783aa6f05cf3324b13d008d8747c6576
 
 
-    php_commerce.database.driver: null
-    php_commerce.database.host: null
-    php_commerce.database.port: null
-    php_commerce.database.name: null
-    php_commerce.database.user: null
-    php_commerce.database.password: null
-    php_commerce.database.path: null
+    php_commerce.database.driver:
+    php_commerce.database.host:
+    php_commerce.database.port:
+    php_commerce.database.name:
+    php_commerce.database.user:
+    php_commerce.database.password:
+    php_commerce.database.path:
 
 #    mailer_transport: smtp
 #    mailer_host: 127.0.0.1
