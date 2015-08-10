@@ -1,6 +1,3 @@
-parameters:
-    phpcommerce.root_dir: %kernel.root_dir%/../vendor/phpcommerce/phpcommerce
-
 imports:
     - { resource: parameters.yml }
     - { resource: "bundles/framework.yml" }

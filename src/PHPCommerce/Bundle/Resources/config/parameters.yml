@@ -1,18 +1,22 @@
 parameters:
-    database_driver: pdo_mysql
-    database_host: localhost
-    database_port: null
-    database_name: symfony
-    database_user: root
-    database_password: root
-    database_path: null
+    php_commerce.root_dir: %kernel.root_dir%/../vendor/phpcommerce/phpcommerce
 
-    mailer_transport: smtp
-    mailer_host: 127.0.0.1
-    mailer_user: null
-    mailer_password: null
+    php_commerce.secret: 59cd82f0783aa6f05cf3324b13d008d8747c6576
 
-    log_level: error
 
-    locale: en
-    secret: 6b9cb4012fb0a383b5400c5380e764505e206502
+    php_commerce.database.driver: null
+    php_commerce.database.host: null
+    php_commerce.database.port: null
+    php_commerce.database.name: null
+    php_commerce.database.user: null
+    php_commerce.database.password: null
+    php_commerce.database.path: null
+
+#    mailer_transport: smtp
+#    mailer_host: 127.0.0.1
+#    mailer_user: null
+#    mailer_password: null
+
+#    log_level: error
+
+#    locale: en
