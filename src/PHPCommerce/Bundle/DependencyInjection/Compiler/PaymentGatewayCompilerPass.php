@@ -7,16 +7,16 @@ use Symfony\Component\DependencyInjection\Reference;
 
 class PaymentGatewayCompilerPass implements CompilerPassInterface {
     public function process(ContainerBuilder $container) {
-        if (!$container->has('phpcommerce.payment.gateway.configuration_service_provider')) {
+        if (!$container->has('php_commerce.payment.gateway.configuration_service_provider')) {
             return;
         }
 
         $definition = $container->findDefinition(
-            'phpcommerce.payment.gateway.configuration_service_provider'
+            'php_commerce.payment.gateway.configuration_service_provider'
         );
 
         $taggedServices = $container->findTaggedServiceIds(
-            'phpcommerce.payment.gateway'
+            'php_commerce.payment.gateway'
         );
 
         foreach ($taggedServices as $id => $tags) {
