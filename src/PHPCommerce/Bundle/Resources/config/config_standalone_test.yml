@@ -1,5 +1,5 @@
 imports:
-    - { resource: config_dev.yml }
+    - { resource: config_standalone_dev.yml }
 
 parameters:
     database_driver: pdo_sqlite

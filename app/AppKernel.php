@@ -16,6 +16,6 @@ class AppKernel extends Kernel
 
     public function registerContainerConfiguration(LoaderInterface $loader)
     {
-        $loader->load( __DIR__ . '/../src/PHPCommerce/Bundle/Resources/config/config_' . $this->getEnvironment() . '.yml');
+        $loader->load( __DIR__ . '/../src/PHPCommerce/Bundle/Resources/config/config_standalone_' . $this->getEnvironment() . '.yml');
     }
 }
