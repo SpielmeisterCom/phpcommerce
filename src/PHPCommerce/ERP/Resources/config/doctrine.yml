@@ -6,6 +6,6 @@ doctrine:
           ERP:
             mapping: true
             type: yml
-            dir: %phpcommerce.root_dir%/src/PHPCommerce/ERP/Resources/config/doctrine
+            dir: %php_commerce.root_dir%/src/PHPCommerce/ERP/Resources/config/doctrine
             is_bundle: false
             prefix: PHPCommerce\ERP\Entity

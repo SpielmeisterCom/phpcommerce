@@ -9,4 +9,6 @@
 #    query_cache_driver: apc
 
 parameters:
-    phpcommerce.root_dir: %kernel.root_dir%/..
+    php_commerce.root_dir: %kernel.root_dir%/..
+
+

@@ -15,5 +15,5 @@ imports:
     - { resource: "../../../ERP/Resources/config/config.yml" }
 
 framework:
-    router: { resource: "%phpcommerce.root_dir%/src/PHPCommerce/Bundle/Resources/config/routing.yml" }
+    router: { resource: "%php_commerce.root_dir%/src/PHPCommerce/Bundle/Resources/config/routing.yml" }
 
