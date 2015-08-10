@@ -2,6 +2,9 @@
 use Symfony\Component\HttpKernel\Kernel;
 use Symfony\Component\Config\Loader\LoaderInterface;
 
+/**
+ * This AppKernel can be used for running phpcommerce in a standalone context (development, tests)
+ */
 class AppKernel extends Kernel
 {
     public function registerBundles()
