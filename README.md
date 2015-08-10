@@ -9,8 +9,10 @@ Add to your `AppKernel.php`:
     {
         $bundles = array(
             //...
-            new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
-            new Symfony\Cmf\Bundle\RoutingBundle\CmfRoutingBundle(),
+            new Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
+
+            new Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
+            new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new PHPCommerce\Bundle\PHPCommerceBundle()
         );
         
