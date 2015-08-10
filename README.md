@@ -25,6 +25,8 @@ Add to your `parameters.yml`:
 
 ```yaml
 parameters:
+    php_commerce.root_dir: %kernel.root_dir%/../vendor/phpcommerce/phpcommerce
+
     php_commerce.database.driver: pdo_mysql
     php_commerce.database.host: 127.0.0.1
     php_commerce.database.port: 3306

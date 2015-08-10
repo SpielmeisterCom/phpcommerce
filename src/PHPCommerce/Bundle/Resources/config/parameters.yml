@@ -1,6 +1,4 @@
 parameters:
-    php_commerce.root_dir: %kernel.root_dir%/../vendor/phpcommerce/phpcommerce
-
     php_commerce.secret: 59cd82f0783aa6f05cf3324b13d008d8747c6576
 
 

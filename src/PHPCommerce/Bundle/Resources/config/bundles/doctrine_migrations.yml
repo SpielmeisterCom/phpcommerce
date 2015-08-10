@@ -1,5 +1,5 @@
 doctrine_migrations:
-    dir_name: %kernel.root_dir%/DoctrineMigrations
-    namespace: PHPCommerce\Migrations
+    dir_name: %php_commerce.root_dir%/src/PHPCommerce/DoctrineMigrations
+    namespace: PHPCommerce\DoctrineMigrations
     table_name: database_version
     name: PHPCommerce Migrations
