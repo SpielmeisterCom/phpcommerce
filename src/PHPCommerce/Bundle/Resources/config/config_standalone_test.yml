@@ -2,6 +2,7 @@ imports:
     - { resource: config_standalone_dev.yml }
 
 parameters:
+    phpcommerce.root_dir: %kernel.root_dir%/..
     database_driver: pdo_sqlite
     database_path: %kernel.cache_dir%/test.db
     database_host: null

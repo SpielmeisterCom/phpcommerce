@@ -7,3 +7,6 @@
 #    metadata_cache_driver: apc
 #    result_cache_driver: apc
 #    query_cache_driver: apc
+
+parameters:
+    phpcommerce.root_dir: %kernel.root_dir%/..

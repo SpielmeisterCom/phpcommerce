@@ -6,6 +6,7 @@ framework:
         collect: false
 
 parameters:
+    phpcommerce.root_dir: %kernel.root_dir%/..
     database_driver: pdo_mysql
     database_host: 127.0.0.1
     database_port: 3306

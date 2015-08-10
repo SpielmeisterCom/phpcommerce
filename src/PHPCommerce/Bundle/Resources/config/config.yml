@@ -1,3 +1,6 @@
+parameters:
+    phpcommerce.root_dir: %kernel.root_dir%/../vendor/phpcommerce/phpcommerce
+
 imports:
     - { resource: parameters.yml }
     - { resource: "bundles/framework.yml" }
@@ -12,4 +15,5 @@ imports:
     - { resource: "../../../ERP/Resources/config/config.yml" }
 
 framework:
-    router: { resource: "%kernel.root_dir%/../src/PHPCommerce/Bundle/Resources/config/routing.yml" }
+    router: { resource: "%phpcommerce.root_dir%/src/PHPCommerce/Bundle/Resources/config/routing.yml" }
+
