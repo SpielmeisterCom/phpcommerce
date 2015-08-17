@@ -1,7 +1,5 @@
 framework:
     secret:          "%php_commerce.secret%"
-    router:
-        resource: ~
     #    strict_requirements: ~
     form:            ~
     csrf_protection: false
