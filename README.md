@@ -35,3 +35,12 @@ parameters:
     php_commerce.database.password: root
 
 ```
+
+Import routes in your `routing.yml`:
+
+```yaml
+# app/config/routing.yml
+phpcommerce:
+    resource: '@PHPCommerceBundle/Resources/config/routing.yml'
+    prefix: /
+```
