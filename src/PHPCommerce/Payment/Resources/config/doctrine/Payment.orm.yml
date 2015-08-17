@@ -1,6 +1,6 @@
 PHPCommerce\Payment\Entity\Payment:
   type: entity
-  table: order_payment
+  table: payment
 
   id:
     id:
@@ -32,13 +32,25 @@ PHPCommerce\Payment\Entity\Payment:
       cascade:
         - persist
 
-  manyToOne:
+#  manyToOne:
+#    order:
+#      targetEntity: PHPCommerce\ERP\Entity\Order
+#      inversedBy: payments
+#      cascade:
+#        - persist
+#      joinColumn:
+#        name: order_id
+#        referencedColumnName: id
+#        nullable: false
+
+  manyToMany:
     order:
       targetEntity: PHPCommerce\ERP\Entity\Order
-      inversedBy: payments
-      cascade:
-        - persist
-      joinColumn:
-        name: order_id
-        referencedColumnName: id
-        nullable: false
+      joinTable:
+        name: payment_order
+        joinColumns:
+          payment_id:
+            referencedColumnName: id
+        inverseJoinColumns:
+          order_id:
+            referencesColumnName: id
