@@ -10,7 +10,3 @@ imports:
     - { resource: "../../../Common/Resources/config/config.yml" }
     - { resource: "../../../Payment/Resources/config/config.yml" }
     - { resource: "../../../ERP/Resources/config/config.yml" }
-
-framework:
-    router: { resource: "%php_commerce.root_dir%/src/PHPCommerce/Bundle/Resources/config/routing.yml" }
-
