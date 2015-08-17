@@ -4,8 +4,7 @@ framework:
         storage_id: session.storage.mock_file
     profiler:
         collect: false
-    framework:
-        router: { resource: "%php_commerce.root_dir%/src/PHPCommerce/Bundle/Resources/config/routing.yml" }
+    router: { resource: "%php_commerce.root_dir%/src/PHPCommerce/Bundle/Resources/config/routing.yml" }
 
 parameters:
     php_commerce.root_dir: %kernel.root_dir%/..
