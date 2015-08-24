@@ -29,16 +29,18 @@ class PaymentEntitiesTest extends AbstractDoctrineTest
     public function testPayment()
     {
         $order = new Order();
+        $this->em->persist($order);
+
 
         $payment = new Payment();
-        $payment->setOrder($order);
+        $payment->addOrder($order);
         $payment->setType(PaymentType::$BANK_ACCOUNT);
         $payment->setGatewayType(PaymentGatewayType::$TEMPORARY);
 
         $this->em->persist($payment);
 
         $payment2 = new Payment();
-        $payment2->setOrder($order);
+        $payment2->addOrder($order);
         $payment2->setType(PaymentType::$CREDIT_CARD);
         $payment2->setGatewayType(PaymentGatewayType::$TEMPORARY);
 
@@ -52,11 +54,14 @@ class PaymentEntitiesTest extends AbstractDoctrineTest
 
         $this->assertCount(2, $orderpayments);
 
+        $this->assertEquals($orderpayments[0]->getOrders()[0]->getId(), $orderpayments[1]->getOrders()[0]->getId());
+
         $orderRepository = $this->em->getRepository('PHPCommerce\ERP\Entity\Order');
         $orders = $orderRepository->findAll();
         $this->assertCount(1, $orders);
 
         $payments = $orders[0]->getPayments();
+
         $this->assertCount(2, $payments);
     }
 
@@ -64,14 +69,14 @@ class PaymentEntitiesTest extends AbstractDoctrineTest
         $order = new Order();
 
         $orderpayment = new Payment();
-        $orderpayment->setOrder($order);
+        $orderpayment->addOrder($order);
         $orderpayment->setType(PaymentType::$BANK_ACCOUNT);
         $orderpayment->setGatewayType(PaymentGatewayType::$TEMPORARY);
 
         $this->em->persist($orderpayment);
 
         $orderpayment2 = new Payment();
-        $orderpayment2->setOrder($order);
+        $orderpayment2->addOrder($order);
         $orderpayment2->setType(PaymentType::$CREDIT_CARD);
         $orderpayment2->setGatewayType(PaymentGatewayType::$TEMPORARY);
 
@@ -93,7 +98,7 @@ class PaymentEntitiesTest extends AbstractDoctrineTest
         $order = new Order();
 
         $orderpayment = new Payment();
-        $orderpayment->setOrder($order);
+        $orderpayment->addOrder($order);
         $orderpayment->setType(PaymentType::$BANK_ACCOUNT);
         $orderpayment->setGatewayType(PaymentGatewayType::$TEMPORARY);
 

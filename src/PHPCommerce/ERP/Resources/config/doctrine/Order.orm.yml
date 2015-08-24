@@ -7,9 +7,19 @@ PHPCommerce\ERP\Entity\Order:
       type: integer
       generator: { strategy: AUTO }
 
-  oneToMany:
+  manyToMany:
     payments:
       targetEntity: PHPCommerce\Payment\Entity\Payment
-      mappedBy: order
       cascade:
         - persist
+      inversedBy: orders
+      joinTable:
+        name: order_payment
+        joinColumns:
+          order_id:
+            referencesColumnName: id
+        inverseJoinColumns:
+          payment_id:
+            referencedColumnName: id
+
+

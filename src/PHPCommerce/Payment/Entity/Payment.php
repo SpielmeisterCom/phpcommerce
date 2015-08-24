@@ -29,9 +29,9 @@ class Payment {
     protected $id;
 
     /**
-     * @var Order
+     * @var Order[]
      */
-    protected $order;
+    protected $orders;
 
     /**
      * @var PaymentType
@@ -52,6 +52,7 @@ class Payment {
 
     public function __construct()
     {
+        $this->orders = new ArrayCollection();
         $this->transactions = new ArrayCollection();
     }
 
@@ -73,20 +74,25 @@ class Payment {
     /**
      * @return Order
      */
-    public function getOrder()
+    public function getOrders()
     {
-        return $this->order;
+        return $this->orders;
     }
 
     /**
-     * @param Order $order
+     * @param Order $orders
      * @return OrderPayment
      */
-    public function setOrder(Order $order)
+    public function setOrders($orders)
     {
-        $this->order = $order;
-        $order->addPayment($this);
+        $this->orders = $orders;
         return $this;
+    }
+
+    public function addOrder(Order $order)
+    {
+        $order->addPayment($this); // synchronously updating inverse side
+        $this->orders->add($order);
     }
 
 

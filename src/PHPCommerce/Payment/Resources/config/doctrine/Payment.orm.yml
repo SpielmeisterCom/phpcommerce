@@ -43,14 +43,10 @@ PHPCommerce\Payment\Entity\Payment:
 #        referencedColumnName: id
 #        nullable: false
 
+
   manyToMany:
-    order:
+    orders:
       targetEntity: PHPCommerce\ERP\Entity\Order
-      joinTable:
-        name: payment_order
-        joinColumns:
-          payment_id:
-            referencedColumnName: id
-        inverseJoinColumns:
-          order_id:
-            referencesColumnName: id
+      mappedBy: payments
+      cascade:
+        - persist
