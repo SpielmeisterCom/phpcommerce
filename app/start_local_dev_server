@@ -1,0 +1,3 @@
+#!/bin/sh
+
+./console  --env=dev server:run --router=../web/app_dev.php
