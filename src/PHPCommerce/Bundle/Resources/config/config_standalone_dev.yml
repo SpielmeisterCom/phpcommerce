@@ -9,11 +9,5 @@ framework:
 parameters:
     php_commerce.root_dir: %kernel.root_dir%/..
 
-    php_commerce.database.driver: pdo_mysql
-    php_commerce.database.host: 127.0.0.1
-    php_commerce.database.port: 3306
-    php_commerce.database.name: phpcommerce
-    php_commerce.database.user: root
-    php_commerce.database.password:
-
-
+    php_commerce.database.driver: pdo_sqlite
+    php_commerce.database.path: %kernel.cache_dir%/test.db
