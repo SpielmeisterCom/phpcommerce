@@ -1,0 +1,4 @@
+services:
+    phpcommerce.erp.order_service:
+        class:        PHPCommerce\ERP\Service\OrderServiceImpl
+

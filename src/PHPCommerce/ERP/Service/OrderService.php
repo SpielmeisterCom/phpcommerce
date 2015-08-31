@@ -1,4 +1,7 @@
 <?php
+namespace PHPCommerce\ERP\Service;
+use PHPCommerce\ERP\Entity\Order;
+
 /**
  * The general interface for interacting with shopping carts and completed Orders.
  * In Broadleaf Commerce, a Cart and an Order are the same thing. A "cart" becomes
@@ -55,9 +58,9 @@ interface OrderService {
      * Looks up an Order by its database id
      *
      * @param orderId
-     * @return the requested Order
+     * @return Order the requested Order
      */
-    //public Order findOrderById(Long orderId);
+    public function findOrderById($orderId);
 
     /**
      * Looks up an Order by its database id

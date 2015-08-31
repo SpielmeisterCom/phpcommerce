@@ -1,2 +1,3 @@
 imports:
     - { resource: doctrine.yml }
+    - { resource: services/order_service.yml }
