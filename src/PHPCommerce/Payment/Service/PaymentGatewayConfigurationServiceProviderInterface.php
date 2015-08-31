@@ -16,7 +16,7 @@ use PHPCommerce\Payment\PaymentGatewayType;
  *
  * @author Phillip Verheyden (phillipuniverse)
  */
-interface PaymentGatewayConfigurationServiceProvider {
+interface PaymentGatewayConfigurationServiceProviderInterface {
 
     /**
      * <p>Returns the first {@link PaymentGatewayConfigurationService} that matches the given {@link PaymentGatewayType}. Useful when

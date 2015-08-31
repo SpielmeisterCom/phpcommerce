@@ -1,6 +1,6 @@
 <?php
 namespace PHPCommerce\ERP\Service;
-use PHPCommerce\ERP\Entity\Order;
+use PHPCommerce\ERP\Entity\OrderInterface;
 
 /**
  * The general interface for interacting with shopping carts and completed Orders.
@@ -58,7 +58,7 @@ interface OrderService {
      * Looks up an Order by its database id
      *
      * @param orderId
-     * @return Order the requested Order
+     * @return OrderInterface the requested Order
      */
     public function findOrderById($orderId);
 
@@ -492,7 +492,7 @@ interface OrderService {
      * @param orderId
      * @param orderItemRequestDTO
      * @param priceOrder
-     * @return Order
+     * @return OrderInterface
      * @throws UpdateCartException
      */
     //Order updateProductOptionsForItem(Long orderId, OrderItemRequestDTO orderItemRequestDTO, boolean priceOrder) throws UpdateCartException;

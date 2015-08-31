@@ -1,3 +1,7 @@
+checkout:
+    path:      /checkout
+    defaults:  { _controller: PHPCommerce\Shop\Controller\CheckoutController::indexAction }
+
 test:
     path:      /test
     defaults:  { _controller: PHPCommerce\Shop\Controller\TestController::indexAction }

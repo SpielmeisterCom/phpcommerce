@@ -3,6 +3,7 @@ namespace PHPCommerce\Payment\Tests;
 
 use DateTime;
 use Doctrine\Common\Persistence\ObjectRepository;
+use PHPCommerce\ERP\Entity\Order;
 use PHPCommerce\Payment\Entity\Payment;
 use PHPCommerce\Payment\Entity\PaymentTransaction;
 use PHPCommerce\Payment\PaymentTransactionType;
@@ -22,7 +23,7 @@ use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 
 
 use PHPCommerce\Bundle\Tests\AbstractDoctrineTest;
-use PHPCommerce\ERP\Entity\Order;
+use PHPCommerce\ERP\Entity\OrderInterface;
 
 class PaymentEntitiesTest extends AbstractDoctrineTest
 {

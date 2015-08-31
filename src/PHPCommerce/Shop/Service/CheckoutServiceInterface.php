@@ -1,7 +1,7 @@
 <?php
 namespace PHPCommerce\Shop\Service;
 
-interface CheckoutService {
+interface CheckoutServiceInterface {
 
     /**
      * <p>Checks out an order by executing the blCheckoutWorkflow. The <b>order</b> is saved both before and after the workflow

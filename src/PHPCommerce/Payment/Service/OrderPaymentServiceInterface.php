@@ -17,7 +17,7 @@ use PHPCommerce\Payment\Dto\PaymentResponseDTO;
  * @author Elbert Bautista (elbertbautista)
  * @author Phillip Verheyden (phillipuniverse)
  */
-interface PaymentGatewayCheckoutService {
+interface PaymentGatewayCheckoutServiceInterface {
     /**
      * @param responseDTO the response that came back from the gateway
      * @param configService configuration values for the payment gateway

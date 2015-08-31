@@ -24,7 +24,7 @@ use PHPCommerce\Payment\Dto\PaymentResponseDTO;
 use PHPCommerce\Payment\Service\Exception\PaymentException;
 use Symfony\Component\HttpFoundation\Request;
 
-interface PaymentGatewayWebResponseService {
+interface PaymentGatewayWebResponseServiceInterface {
     /**
      * @param Request $request
      * @throws PaymentException

@@ -2,7 +2,7 @@
 namespace PHPCommerce\Payment\Service;
 
 use PHPCommerce\Common\Money\Money;
-use PHPCommerce\ERP\Entity\Order;
+use PHPCommerce\ERP\Entity\OrderInterface;
 use PHPCommerce\Payment\Dto\PaymentRequestDTO;
 use PHPCommerce\Payment\Entity\PaymentTransaction;
 
@@ -22,7 +22,7 @@ interface OrderToPaymentRequestDTOService {
      * @return PaymentRequestDTO a {@link PaymentRequestDTO} based on the properties of <b>order</b>. This will only utilize the payments
      * that are of type {@link PaymentType#CREDIT_CARD}
      */
-    public function translateOrder(Order $order);
+    public function translateOrder(OrderInterface $order);
 
     /**
      * Utilizes the {@link PaymentTransaction#getAdditionalFields()} map to populate necessary request parameters on the
@@ -37,9 +37,9 @@ interface OrderToPaymentRequestDTOService {
      */
     public function translatePaymentTransaction(Money $transactionAmount, PaymentTransaction $paymentTransaction);
 
-    public function populateTotals(Order $order, PaymentRequestDTO $requestDTO);
+    public function populateTotals(OrderInterface $order, PaymentRequestDTO $requestDTO);
 
-    public function populateCustomerInfo(Order $order, PaymentRequestDTO $requestDTO);
+    public function populateCustomerInfo(OrderInterface $order, PaymentRequestDTO $requestDTO);
 
     /**
      * Uses the first shippable fulfillment group to populate the {@link PaymentRequestDTO#shipTo()} object
@@ -47,9 +47,9 @@ interface OrderToPaymentRequestDTOService {
      * @param requestDTO the {@link PaymentRequestDTO} that should be populated
      * @see {@link FulfillmentGroupService#getFirstShippableFulfillmentGroup(Order)}
      */
-    public function populateShipTo(Order $order, PaymentRequestDTO $requestDTO);
+    public function populateShipTo(OrderInterface $order, PaymentRequestDTO $requestDTO);
 
-    public function populateBillTo(Order $order, PaymentRequestDTO $requestDTO);
+    public function populateBillTo(OrderInterface $order, PaymentRequestDTO $requestDTO);
 
-    public function populateDefaultLineItemsAndSubtotal(Order $order, PaymentRequestDTO $requestDTO);
+    public function populateDefaultLineItemsAndSubtotal(OrderInterface $order, PaymentRequestDTO $requestDTO);
 }

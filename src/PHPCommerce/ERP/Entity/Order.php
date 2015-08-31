@@ -2,9 +2,10 @@
 namespace PHPCommerce\ERP\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
+use PHPCommerce\ERP\Domain\OrderInterface;
 use PHPCommerce\Payment\Entity\Payment;
 
-class Order {
+class Order implements OrderInterface {
     protected $id;
 
     /**

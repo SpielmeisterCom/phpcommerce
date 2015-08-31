@@ -3,7 +3,7 @@
 use PHPCommerce\Entity\Secure\Referenced;
 use PHPCommerce\Payment\PaymentType;
 
-interface SecureOrderPaymentService {
+interface SecureOrderPaymentServiceInterface {
 
     /**
      * @param $referenceNumber

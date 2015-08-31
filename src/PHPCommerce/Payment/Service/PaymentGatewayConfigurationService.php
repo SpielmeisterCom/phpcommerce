@@ -64,7 +64,7 @@ interface PaymentGatewayConfigurationService {
     public function getRollbackService();
 
     /**
-     * @return PaymentGatewayWebResponseService
+     * @return PaymentGatewayWebResponseServiceInterface
      */
     public function getWebResponseService();
 

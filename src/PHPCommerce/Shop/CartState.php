@@ -1,17 +1,17 @@
 <?php
 namespace PHPCommerce\Shop;
 
-use PHPCommerce\ERP\Entity\Order;
+use PHPCommerce\ERP\Entity\OrderInterface;
 
 class CartState {
 
     /**
      * Gets the current cart based on the current request
      *
-     * @return Order the current customer's cart
+     * @return OrderInterface the current customer's cart
      */
     public static function getCart() {
-        throw new \NotImplementedException();
+        throw new \Exception("not implemented");
     }
 
     /**
@@ -19,7 +19,7 @@ class CartState {
      *
      * @param cart the new cart to set
      */
-    public static function setCart(Order $cart) {
-        throw new \NotImplementedException();
+    public static function setCart(OrderInterface $cart) {
+        throw new \Exception("not implemented");
     }
 }

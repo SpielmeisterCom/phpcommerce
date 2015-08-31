@@ -2,7 +2,7 @@
 namespace PHPCommerce\Payment\Service;
 use PHPCommerce\Payment\PaymentGatewayType;
 
-class PaymentGatewayConfigurationServiceProviderImpl implements PaymentGatewayConfigurationServiceProvider {
+class PaymentGatewayConfigurationServiceProviderImpl implements PaymentGatewayConfigurationServiceProviderInterface {
     /**
      * @var PaymentGatewayConfigurationService[]
      */

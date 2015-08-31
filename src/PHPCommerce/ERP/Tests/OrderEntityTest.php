@@ -3,6 +3,7 @@ namespace PHPCommerce\ERP\Tests;
 
 use PHPCommerce\Bundle\Tests\AbstractDoctrineTest;
 use PHPCommerce\ERP\Entity\Order;
+use PHPCommerce\ERP\Entity\OrderInterface;
 
 class OrderTest extends AbstractDoctrineTest
 {

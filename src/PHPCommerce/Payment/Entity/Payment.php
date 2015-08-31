@@ -1,7 +1,7 @@
 <?php
 namespace PHPCommerce\Payment\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
-use PHPCommerce\ERP\Entity\Order;
+use PHPCommerce\ERP\Domain\OrderInterface;
 use PHPCommerce\Payment\PaymentGatewayType;
 use PHPCommerce\Payment\PaymentTransactionType;
 use PHPCommerce\Payment\PaymentType;
@@ -29,7 +29,7 @@ class Payment {
     protected $id;
 
     /**
-     * @var Order[]
+     * @var OrderInterface[]
      */
     protected $orders;
 
@@ -72,7 +72,7 @@ class Payment {
     }
 
     /**
-     * @return Order
+     * @return OrderInterface
      */
     public function getOrders()
     {
@@ -80,7 +80,7 @@ class Payment {
     }
 
     /**
-     * @param Order $orders
+     * @param OrderInterface $orders
      * @return OrderPayment
      */
     public function setOrders($orders)
@@ -89,7 +89,7 @@ class Payment {
         return $this;
     }
 
-    public function addOrder(Order $order)
+    public function addOrder(OrderInterface $order)
     {
         $order->addPayment($this); // synchronously updating inverse side
         $this->orders->add($order);
