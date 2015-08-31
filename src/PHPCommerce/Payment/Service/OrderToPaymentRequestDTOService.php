@@ -1,4 +1,6 @@
 <?php
+namespace PHPCommerce\Payment\Service;
+
 use PHPCommerce\Common\Money\Money;
 use PHPCommerce\ERP\Entity\Order;
 use PHPCommerce\Payment\Dto\PaymentRequestDTO;
