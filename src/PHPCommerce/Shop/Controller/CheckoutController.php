@@ -7,18 +7,26 @@ use PHPCommerce\Shop\CartState;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Bundle\FrameworkBundle\Templating\EngineInterface;
 use Symfony\Component\HttpFoundation\Response;
 
 class CheckoutController extends Controller {
-
+    /**
+     * @var EngineInterface
+     */
+    protected $templating;
 
     /**
      * @var OrderServiceInterface
      */
     protected $orderService;
 
-    public function __construct(OrderServiceInterface $orderServiceInterface)
+    public function __construct(
+        EngineInterface $templating,
+        OrderServiceInterface $orderServiceInterface
+    )
     {
+        $this->templating = $templating;
         $this->orderService = $orderServiceInterface;
     }
 
@@ -28,5 +36,12 @@ class CheckoutController extends Controller {
 
         $this->orderService->findOrderById(10);
         return new Response("Checkout");
+
+        /*
+        return $this->templating->renderResponse(
+            'AppBundle:Hello:index.html.twig',
+            array('name' => $name)
+        );
+        */
     }
 }
