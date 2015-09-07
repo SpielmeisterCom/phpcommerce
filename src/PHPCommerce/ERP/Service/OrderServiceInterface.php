@@ -1,5 +1,6 @@
 <?php
 namespace PHPCommerce\ERP\Service;
+use PHPCommerce\ERP\Domain\NullOrderFactoryInterface;
 use PHPCommerce\ERP\Entity\OrderInterface;
 
 /**
@@ -10,7 +11,8 @@ use PHPCommerce\ERP\Entity\OrderInterface;
  * Most of the methods in this order are used to modify the cart. However, it is also
  * common to use this service for "named" orders (aka wishlists).
  */
-interface OrderService {
+interface OrderServiceInterface {
+    public function __construct(NullOrderFactoryInterface $nullOrderFactoryInterface);
 
     /**
      * Creates a new Order for the given customer. Generally, you will want to use the customer
