@@ -1,5 +1,9 @@
+parameters:
+  phpcommerce.erp.entity.order.class: "PHPCommerce\ERP\Entity\Order"
+
 services:
     phpcommerce.erp.dao.order:
         class:        PHPCommerce\ERP\Dao\OrderDaoImpl
         arguments:
             - @doctrine.orm.default_entity_manager
+            - %phpcommerce.erp.entity.order.class%
