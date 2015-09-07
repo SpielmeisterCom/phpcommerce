@@ -9,7 +9,7 @@ use PHPCommerce\ERP\Domain\OrderInterface;
  * @see NullOrderImpl
  * @author apazzolini
  */
-interface NullOrderFactory {
+interface NullOrderFactoryInterface {
     /**
      * @return OrderInterface
      */

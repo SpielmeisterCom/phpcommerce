@@ -2,9 +2,9 @@
 namespace PHPCommerce\ERP\Domain;
 
 use PHPCommerce\ERP\Domain\OrderInterface;
-use PHPCommerce\ERP\Entity\NullOrder;
+use PHPCommerce\ERP\Domain\NullOrder;
 
-class NullOrderFactoryImpl implements NullOrderFactory {
+class NullOrderFactoryImpl implements NullOrderFactoryInterface {
     /**
      * @return OrderInterface
      */
