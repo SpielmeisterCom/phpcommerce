@@ -1,4 +1,6 @@
 <?php
+namespace PHPCommerce\Common\Dao;
+
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\EntityRepository;
 use PHPCommerce\Common\IdInterface;
