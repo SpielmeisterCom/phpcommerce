@@ -2,7 +2,7 @@
 namespace PHPCommerce\ERP\Dao;
 
 use Doctrine\ORM\EntityManagerInterface;
-use PHPCommerce\Common\AbstractBaseDao;
+use PHPCommerce\Common\Dao\AbstractBaseDao;
 
-class OrderDao extends AbstractBaseDao implements OrderDaoInterface {
+class OrderDaoImpl extends AbstractBaseDao implements OrderDaoInterface {
 }

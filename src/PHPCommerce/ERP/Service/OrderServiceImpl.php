@@ -1,17 +1,27 @@
 <?php
 namespace PHPCommerce\ERP\Service;
 
+use PHPCommerce\ERP\Dao\OrderDaoInterface;
 use PHPCommerce\ERP\Domain\NullOrderFactoryInterface;
 
 class OrderServiceImpl implements OrderServiceInterface
 {
     /**
+     * @var OrderDaoInterface
+     */
+    protected $orderDao;
+
+    /**
      * @var NullOrderFactoryInterface
      */
     protected $nullOrderFactory;
 
-    public function __construct(NullOrderFactoryInterface $nullOrderFactoryInterface)
+    public function __construct(
+        OrderDaoInterface $orderDao,
+        NullOrderFactoryInterface $nullOrderFactoryInterface
+    )
     {
+        $this->orderDao = $orderDao;
         $this->nullOrderFactory = $nullOrderFactoryInterface;
     }
 

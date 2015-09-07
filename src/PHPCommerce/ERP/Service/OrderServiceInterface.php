@@ -1,5 +1,6 @@
 <?php
 namespace PHPCommerce\ERP\Service;
+use PHPCommerce\ERP\Dao\OrderDaoInterface;
 use PHPCommerce\ERP\Domain\NullOrderFactoryInterface;
 use PHPCommerce\ERP\Entity\OrderInterface;
 
@@ -12,7 +13,10 @@ use PHPCommerce\ERP\Entity\OrderInterface;
  * common to use this service for "named" orders (aka wishlists).
  */
 interface OrderServiceInterface {
-    public function __construct(NullOrderFactoryInterface $nullOrderFactoryInterface);
+    public function __construct(
+        OrderDaoInterface $orderDao,
+        NullOrderFactoryInterface $nullOrderFactoryInterface
+    );
 
     /**
      * Creates a new Order for the given customer. Generally, you will want to use the customer
