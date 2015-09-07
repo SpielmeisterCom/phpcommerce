@@ -1,5 +1,5 @@
 <?php
-namespace PHPCommerce\Common\Domain;
+namespace PHPCommerce\Common\Dao;
 
 interface IdInterface
 {
