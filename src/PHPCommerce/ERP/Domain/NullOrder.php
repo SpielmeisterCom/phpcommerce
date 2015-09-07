@@ -1,5 +1,5 @@
 <?php
-namespace PHPCommerce\ERP\Entity;
+namespace PHPCommerce\ERP\Domain;
 
 use Exception;
 use PHPCommerce\ERP\Domain\OrderInterface;
