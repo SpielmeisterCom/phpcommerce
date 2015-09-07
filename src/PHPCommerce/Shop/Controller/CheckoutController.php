@@ -2,6 +2,7 @@
 namespace PHPCommerce\Shop\Controller;
 
 use PHPCommerce\ERP\Service\OrderService;
+use PHPCommerce\ERP\Service\OrderServiceInterface;
 use PHPCommerce\Shop\CartState;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
@@ -10,18 +11,22 @@ use Symfony\Component\HttpFoundation\Response;
 
 class CheckoutController extends Controller {
 
-    public function __construct()
+
+    /**
+     * @var OrderServiceInterface
+     */
+    protected $orderService;
+
+    public function __construct(OrderServiceInterface $orderServiceInterface)
     {
+        $this->orderService = $orderServiceInterface;
     }
 
     public function indexAction()
     {
-        $cart = CartState::getCart();
+     //   $cart = CartState::getCart();
 
-        /** @var $orderService OrderService */
-        $orderService = $this->get('phpcommerce.erp.order_service');
-
-       $orderService->findOrderById(10);
+        $this->orderService->findOrderById(10);
         return new Response("Checkout");
     }
 }

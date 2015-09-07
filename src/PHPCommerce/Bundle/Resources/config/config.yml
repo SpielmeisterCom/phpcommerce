@@ -10,3 +10,4 @@ imports:
     - { resource: "../../../Common/Resources/config/config.yml" }
     - { resource: "../../../Payment/Resources/config/config.yml" }
     - { resource: "../../../ERP/Resources/config/config.yml" }
+    - { resource: "../../../Shop/Resources/config/config.yml" }

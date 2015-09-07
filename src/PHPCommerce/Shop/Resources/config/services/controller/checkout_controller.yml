@@ -1,0 +1,5 @@
+services:
+    phpcommerce.shop.controller.checkout:
+        class:        PHPCommerce\Shop\Controller\CheckoutController
+        arguments:
+             - @phpcommerce.erp.service.order
