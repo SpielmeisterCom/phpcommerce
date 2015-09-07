@@ -1,0 +1,6 @@
+services:
+    phpcommerce.erp.service.order:
+        class:        PHPCommerce\ERP\Service\OrderServiceImpl
+        arguments:
+            - @phpcommerce.erp.domain.null_order_factory
+

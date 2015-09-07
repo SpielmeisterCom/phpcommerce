@@ -1,4 +1,5 @@
 imports:
     - { resource: doctrine.yml }
-    - { resource: services/null_order_factory.yml }
-    - { resource: services/order_service.yml }
+    - { resource: services/dao/order.yml }
+    - { resource: services/domain/null_order_factory.yml }
+    - { resource: services/service/order.yml }

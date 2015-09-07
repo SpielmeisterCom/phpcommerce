@@ -1,4 +1,4 @@
 services:
-    phpcommerce.erp.null_order_factory:
+    phpcommerce.erp.domain.null_order_factory:
         class:        PHPCommerce\ERP\Domain\NullOrderFactoryImpl
 
