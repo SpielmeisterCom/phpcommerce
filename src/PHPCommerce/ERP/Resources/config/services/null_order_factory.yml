@@ -1,0 +1,4 @@
+services:
+    phpcommerce.erp.null_order_factory:
+        class:        PHPCommerce\ERP\Service\OrderServiceImpl
+

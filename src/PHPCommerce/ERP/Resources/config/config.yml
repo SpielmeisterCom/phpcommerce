@@ -1,3 +1,4 @@
 imports:
     - { resource: doctrine.yml }
+    - { resource: services/null_order_factory.yml }
     - { resource: services/order_service.yml }
