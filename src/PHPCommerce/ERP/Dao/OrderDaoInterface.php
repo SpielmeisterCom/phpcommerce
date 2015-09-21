@@ -1,7 +1,8 @@
 <?php
 namespace PHPCommerce\ERP\Dao;
-use PHPCommerce\Common\Dao\AbstractBaseDaoInterface;
 
-interface OrderDaoInterface extends AbstractBaseDaoInterface {
+use PHPCommerce\Common\Dao\BaseDaoInterface;
+
+interface OrderDaoInterface extends BaseDaoInterface {
 
 }

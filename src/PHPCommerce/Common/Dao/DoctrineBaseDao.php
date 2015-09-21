@@ -101,6 +101,6 @@ class DoctrineBaseDao implements BaseDaoInterface
      */
     public function getById($id)
     {
-        return $this->repository->findOne($id);
+        return $this->repository->find($id);
     }
 }

@@ -33,6 +33,6 @@ class OrderServiceImpl implements OrderServiceInterface
      */
     public function findOrderById($orderId)
     {
-        throw new \Exception("not implemented");
+        return $this->orderDao->getById($orderId);
     }
 }
