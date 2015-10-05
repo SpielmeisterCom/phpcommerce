@@ -2,6 +2,7 @@
 namespace PHPCommerce\Payment\Entity;
 
 use DateTime;
+use PHPCommerce\Common\Entity\Money;
 use PHPCommerce\Payment\PaymentTransactionType;
 
 class PaymentTransaction /* extends Serializable, Status, AdditionalFields */ {

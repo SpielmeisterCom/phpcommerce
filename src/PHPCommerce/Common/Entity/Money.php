@@ -1,5 +1,5 @@
 <?php
-namespace PHPCommerce\Common\Money;
+namespace PHPCommerce\Common\Entity;
 
 class Money {
     public static $ZERO;
