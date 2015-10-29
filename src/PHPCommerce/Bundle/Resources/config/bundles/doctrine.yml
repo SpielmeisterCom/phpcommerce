@@ -1,12 +1,14 @@
 doctrine:
   dbal:
-    driver:   "%php_commerce.database.driver%"
-    host:     "%php_commerce.database.host%"
-    port:     "%php_commerce.database.port%"
-    dbname:   "%php_commerce.database.name%"
-    user:     "%php_commerce.database.user%"
-    password: "%php_commerce.database.password%"
-    path:     "%php_commerce.database.path%"
+    driver:   %php_commerce.database.driver%
+    host:     %php_commerce.database.host%
+    port:     %php_commerce.database.port%
+    dbname:   %php_commerce.database.name%
+    user:     %php_commerce.database.user%
+    password: %php_commerce.database.password%
+    path:     %php_commerce.database.path%
+    server_version: %php_commerce.database.server_version%
+
     charset:  UTF8
 
     # if using pdo_sqlite as your database driver:
