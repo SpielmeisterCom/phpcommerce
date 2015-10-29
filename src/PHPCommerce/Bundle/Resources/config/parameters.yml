@@ -1,14 +1,13 @@
 parameters:
     php_commerce.secret: 59cd82f0783aa6f05cf3324b13d008d8747c6576
 
-
-    php_commerce.database.driver:
-    php_commerce.database.host:
-    php_commerce.database.port:
-    php_commerce.database.name:
-    php_commerce.database.user:
-    php_commerce.database.password:
-    php_commerce.database.path:
+    php_commerce.database.driver: pdo_mysql
+    php_commerce.database.host: localhost
+    php_commerce.database.port: null
+    php_commerce.database.name: symfony
+    php_commerce.database.user: root
+    php_commerce.database.password: root
+    php_commerce.database.path: null
 
 #    mailer_transport: smtp
 #    mailer_host: 127.0.0.1
