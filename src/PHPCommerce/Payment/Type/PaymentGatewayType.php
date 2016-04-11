@@ -1,5 +1,5 @@
 <?php
-namespace PHPCommerce\Payment;
+namespace PHPCommerce\Payment\Type;
 /**
  * <p>This is designed such that individual payment modules will extend this to add their own type. For instance, while
  * this class does not explicitly have a 'Braintree' payment gateway type, the Braintree module will provide an extension

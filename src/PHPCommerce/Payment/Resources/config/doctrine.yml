@@ -1,4 +1,10 @@
 doctrine:
+  dbal:
+    types:
+        pc_payment_type:          PHPCommerce\Payment\Type\DBAL\PaymentDBALType
+        pc_payment_gateway_type:  PHPCommerce\Payment\Type\DBAL\PaymentGatewayDBALType
+        pc_payment_gateway_type:  PHPCommerce\Payment\Type\DBAL\PaymentTransactionDBALType
+
   orm:
     entity_managers:
       default:

@@ -1,19 +1,20 @@
 <?php
-namespace PHPCommerce\Payment\ORM\Types;
+namespace PHPCommerce\Payment\Type\DBAL;
+
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Types\Type;
-use PHPCommerce\Payment\PaymentType as PaymentTypeModel;
+use PHPCommerce\Payment\Type\PaymentGatewayType;
 
-class PaymentType extends Type
+class PaymentGatewayDBALType extends Type
 {
     public function getName()
     {
-        return 'payment_type';
+        return 'pc_payment_gateway_type';
     }
 
     public function getSQLDeclaration(array $fieldDeclaration, AbstractPlatform $platform)
     {
-        return $platform->getDoctrineTypeMapping('payment_type');
+        return "VARCHAR(255)";
     }
 
     public function convertToDatabaseValue($value, AbstractPlatform $platform)
@@ -23,6 +24,6 @@ class PaymentType extends Type
 
     public function convertToPHPValue($value, AbstractPlatform $platform)
     {
-        return ($value === null) ? null : PaymentTypeModel::getInstance($value);
+        return ($value === null) ? null : PaymentGatewayType::getInstance($value);
     }
 }

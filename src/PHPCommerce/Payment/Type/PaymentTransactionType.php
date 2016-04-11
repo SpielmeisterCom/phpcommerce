@@ -1,5 +1,5 @@
 <?php
-namespace PHPCommerce\Payment;
+namespace PHPCommerce\Payment\Type;
 
 /**
  * The PaymentTransactionType is used to represent the types of operations that could occur on the within the same payment.
