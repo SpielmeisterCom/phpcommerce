@@ -5,7 +5,7 @@ doctrine:
         mappings:
           Payment:
             mapping: true
-            type: yml
-            dir: %php_commerce.root_dir%/src/PHPCommerce/Payment/Resources/config/doctrine
+            type: annotation
+            dir: %php_commerce.root_dir%/src/PHPCommerce/Payment/Entity
             is_bundle: false
             prefix: PHPCommerce\Payment\Entity
